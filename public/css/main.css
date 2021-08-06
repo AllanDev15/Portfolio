@@ -907,6 +907,11 @@ section {
   font-size: 16px;
 }
 @media (min-width: 1024px) {
+  .technical-skills__content .technical-skills__description {
+    text-align: right;
+  }
+}
+@media (min-width: 1024px) {
   .technical-skills__content {
     grid-template-columns: 6fr 4fr;
     grid-template-rows: repeat(2, auto);
@@ -964,6 +969,11 @@ section {
 }
 .technical-skills__other .technical-skills__item .technical-skills__text {
   font-size: 14px;
+}
+@media (min-width: 1024px) {
+  .technical-skills__other .technical-skills__item .technical-skills__text {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

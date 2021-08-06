@@ -467,6 +467,9 @@
 
     .technical-skills__description {
       font-size: 16px;
+      @media (min-width: 1024px) {
+        text-align: right;
+      }
     }
     @media (min-width: 1024px) {
       & {
@@ -534,6 +537,9 @@
 
       .technical-skills__text {
         font-size: 14px;
+        @media (min-width: 1024px) {
+          font-size: 16px;
+        }
       }
     }
   }
