@@ -1,0 +1,14 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass ./src/scss/main.scss ./public/css/styles.css",
+    "watchSASS": "sass --watch ./src/scss:./public/css/"
+  },
+  "keywords": [],
+  "author": "Allan Atzin Flores De la Serna",
+  "license": "ISC",
+  "dependencies": {}
+}

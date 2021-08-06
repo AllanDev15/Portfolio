@@ -1,0 +1,133 @@
+html {
+  box-sizing: border-box;
+  font-size: 12px;
+  height: -webkit-fill-available;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+body {
+  color: $black;
+  background-color: $white;
+  font-family: $textFont;
+}
+p {
+  line-height: 1.5;
+  margin: 0px;
+  cursor: default;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $black;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: $titleFont;
+  margin: 0px;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+section {
+  padding: 4rem 0px;
+}
+
+.icon {
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  .icon {
+    font-size: 20px;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.whiteLink {
+  color: rgba($white, 0.5);
+  fill: rgba($white, 0.5);
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    color: $white;
+    fill: $white;
+  }
+}
+.blackLink {
+  color: rgba($black, 0.5);
+  fill: rgba($black, 0.5);
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    color: $black;
+    fill: $black;
+  }
+}
+.title {
+  margin-bottom: $spaceLg;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -8px;
+    width: 80px;
+    height: 2px;
+  }
+  @media (min-width: 1024px) {
+    & {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: $secondaryColor-400;
+  border: 1px solid #cc8500;
+  font-size: 14px;
+  color: #000000;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: $secondaryColor-500;
+  }
+  @media (min-width: 768px) {
+    & {
+      font-size: 16px;
+    }
+  }
+}
