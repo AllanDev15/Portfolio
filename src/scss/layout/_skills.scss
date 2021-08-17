@@ -1,0 +1,89 @@
+@use '../utils';
+
+// Technical Skills
+.technical-skill-container {
+  background-color: rgba(utils.$primaryColor-800, 0.06);
+}
+.technical-skills {
+  $self: &;
+  &__title:after {
+    background-color: utils.$secondaryColor-400;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 100%;
+    row-gap: utils.$spaceXL;
+
+    #{$self}__description {
+      font-size: 16px;
+      @include utils.desktop {
+        text-align: right;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+      }
+    }
+
+    @include utils.desktop {
+      grid-template-columns: 6fr 4fr;
+      grid-template-rows: repeat(2, auto);
+      column-gap: utils.$spaceLg;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @include utils.tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0px;
+    background-color: utils.$white;
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+
+    #{$self}__icon .icon {
+      font-size: 2.1428rem;
+      fill: utils.$dark;
+    }
+    #{$self}__text {
+      font-size: 16px;
+      @include utils.desktop {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__other {
+    .technical-skills__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: utils.$spaceMd;
+    }
+    .technical-skills__item {
+      padding: 8px 24px;
+      background-color: utils.$white;
+      border-radius: 4px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+
+      .technical-skills__text {
+        font-size: 14px;
+        @include utils.desktop {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

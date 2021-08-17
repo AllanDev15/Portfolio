@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function scrollNavbar() {
-  const navbar = document.querySelector('.navbar-container');
+  const navbar = document.querySelector('.navbar');
   const navbarHeight = navbar.offsetHeight;
   const navigationLinks = navbar.querySelectorAll('.whiteLink');
   const parallax = document.querySelector('.parallax');
@@ -12,13 +12,13 @@ function scrollNavbar() {
     const parallaxScroll = parallax.scrollTop;
 
     if (parallaxScroll > navbarHeight * 2) {
-      navbar.classList.add('navbar-container--scroll');
+      navbar.classList.add('navbar--scroll');
       navigationLinks.forEach((link) => {
         link.classList.remove('whiteLink');
         link.classList.add('blackLink');
       });
     } else {
-      navbar.classList.remove('navbar-container--scroll');
+      navbar.classList.remove('navbar--scroll');
       navigationLinks.forEach((link) => {
         link.classList.remove('blackLink');
         link.classList.add('whiteLink');

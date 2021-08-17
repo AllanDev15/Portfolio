@@ -1,0 +1,211 @@
+@use '../utils';
+
+.navbar {
+  $self: &;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  backdrop-filter: blur(4px);
+  z-index: 5;
+  border-bottom: 1px solid rgba(utils.$white, 0.25);
+  display: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0px;
+    transition: inherit;
+  }
+
+  &__title {
+    color: utils.$white;
+    transition: inherit;
+  }
+
+  &.navbar--scroll {
+    background-color: utils.$white;
+
+    #{$self}__content {
+      padding: 16px 0px;
+    }
+    #{$self}__title {
+      color: utils.$black;
+      fill: utils.$black;
+    }
+  }
+  @include utils.tablet {
+    display: block;
+  }
+
+  // Navigation
+  .navigation {
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    &__link:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Top navbar mobile
+  &.navbar--mobile {
+    display: block;
+    position: relative;
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(utils.$white, 0.25);
+
+    #{$self}__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0px;
+    }
+    #{$self}__text {
+      color: utils.$white;
+    }
+    @include utils.tablet {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .social-media--mobile {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+  }
+}
+
+// Navigation Mobile
+.navigation-mobile {
+  display: block;
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  background-color: utils.$white;
+  padding: 9px 0px 7px 0px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    fill: utils.$dark;
+  }
+  &__text {
+    font-size: 10px;
+  }
+  @include utils.tablet {
+    display: none;
+  }
+}
+
+// Hero
+.parallax {
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 5px;
+  height: calc(100vh - 63px);
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  height: calc(100vh - 63px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0px;
+    background: url('../assets/img/parallax3.webp');
+    background-size: cover;
+    background-position: center center;
+    filter: brightness(0.5);
+    // scale calculation: 1 + ((z transform value * -1)  / perspective)
+    transform: translateZ(-4px) translateX(-4px) scale(calc(1.05 + ((-4 * -1) / 5)));
+    z-index: -1;
+  }
+}
+@media (min-width: 768px) {
+  .hero,
+  .parallax {
+    height: 100vh;
+  }
+}
+
+// Header
+.header {
+  width: 100%;
+
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__description {
+    font-size: 16px;
+    @include utils.tablet {
+      font-size: 18px;
+    }
+  }
+  @include utils.tablet {
+    width: 60%;
+  }
+}
+
+// Contact
+.contact {
+  padding: 8px 0px;
+  &__social-media {
+    fill: rgba(utils.$white, 0.5);
+    align-items: center;
+    gap: 32px;
+    display: none;
+    & .icon {
+      font-size: 30px;
+    }
+    @include utils.tablet {
+      display: flex;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include utils.tablet {
+      flex-basis: 60%;
+    }
+    @include utils.desktop {
+      flex-basis: 50%;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    & .icon {
+      font-size: 16px;
+    }
+  }
+  @include utils.tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px;
+  }
+}
