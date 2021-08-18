@@ -49,7 +49,7 @@ h4 {
   margin: 0px;
 }
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.625rem;
 }
 h2 {
   font-size: 2rem;
@@ -58,7 +58,7 @@ h3 {
   font-size: 1.5rem;
 }
 section {
-  padding: 4rem 0px;
+  padding: 4.5rem 0px;
 }
 
 .icon {
@@ -119,9 +119,22 @@ section {
   }
 }
 
+.principal-text {
+  font-size: 14px;
+  @include utils.tablet {
+    font-size: 16px;
+  }
+}
+.secondary-text {
+  font-size: 1rem;
+  @include utils.desktop {
+    font-size: 14px;
+  }
+}
+
 .button {
   display: inline-block;
-  padding: 8px 24px;
+  padding: 12px 24px;
   background-color: utils.$secondaryColor-400;
   border: 1px solid #cc8500;
   font-size: 14px;
@@ -132,9 +145,7 @@ section {
   &:hover {
     background-color: utils.$secondaryColor-500;
   }
-  @media (min-width: 768px) {
-    & {
-      font-size: 16px;
-    }
+  @include utils.tablet {
+    font-size: 16px;
   }
 }

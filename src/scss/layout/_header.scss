@@ -157,10 +157,7 @@
     margin-bottom: 16px;
   }
   &__description {
-    font-size: 16px;
-    @include utils.tablet {
-      font-size: 18px;
-    }
+    font-size: 1.3333rem;
   }
   @include utils.tablet {
     width: 60%;
@@ -199,7 +196,10 @@
     gap: 8px;
     font-size: 1rem;
     & .icon {
-      font-size: 16px;
+      font-size: 1.125rem;
+    }
+    @media (max-width: 361px) {
+      gap: 4px;
     }
   }
   @include utils.tablet {
