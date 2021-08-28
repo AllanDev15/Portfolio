@@ -10,12 +10,12 @@
 
     @include utils.tablet {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, auto);
+      grid-template-rows: repeat(2, auto);
       column-gap: utils.$spaceLg;
+      row-gap: unset;
     }
     @include utils.desktop {
       grid-template-rows: repeat(2, auto);
-      row-gap: unset;
     }
   }
 
@@ -23,18 +23,6 @@
     background-color: utils.$primaryColor-800;
   }
 
-  @media (min-width: 768px) {
-    &__description {
-      grid-column: 1 / 3;
-    }
-    &__info {
-      grid-column: 1 / 3;
-    }
-    &__cv {
-      grid-column: 1 / 3;
-      justify-self: center;
-    }
-  }
   @media (min-width: 1024px) {
     &__description {
       grid-column: 1 / 2;
@@ -56,28 +44,8 @@
     row-gap: utils.$spaceXL;
     flex-direction: column;
 
-    @media (min-width: 768px) {
-      & {
-        flex-direction: row;
-        gap: utils.$spaceXL utils.$spaceLg;
-      }
-      & .skills,
-      & .interests {
-        flex-basis: 50%;
-      }
-    }
     @include utils.desktop {
       flex-direction: column;
-    }
-  }
-
-  .skills .subtitle,
-  .interests .subtitle {
-    text-align: left;
-    @media (min-width: 768px) and (max-width: 1023px) {
-      & {
-        text-align: center;
-      }
     }
   }
 
@@ -117,7 +85,6 @@
     }
     @include utils.tablet {
       font-size: 16px;
-      text-align: center;
     }
   }
 }
@@ -130,11 +97,6 @@
     justify-content: start;
     gap: utils.$spaceSm utils.$spaceSm;
 
-    @media (min-width: 768px) and (max-width: 1023px) {
-      & {
-        justify-content: center;
-      }
-    }
     @include utils.desktop {
       margin-top: utils.$spaceLg;
     }

@@ -722,30 +722,18 @@ section {
 @media (min-width: 768px) {
   .about__content {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
     column-gap: 32px;
+    row-gap: unset;
   }
 }
 @media (min-width: 1024px) {
   .about__content {
     grid-template-rows: repeat(2, auto);
-    row-gap: unset;
   }
 }
 .about__title:after {
   background-color: #1465f0;
-}
-@media (min-width: 768px) {
-  .about__description {
-    grid-column: 1/3;
-  }
-  .about__info {
-    grid-column: 1/3;
-  }
-  .about__cv {
-    grid-column: 1/3;
-    justify-self: center;
-  }
 }
 @media (min-width: 1024px) {
   .about__description {
@@ -765,28 +753,9 @@ section {
   row-gap: 48px;
   flex-direction: column;
 }
-@media (min-width: 768px) {
-  .about__info {
-    flex-direction: row;
-    gap: 48px 32px;
-  }
-  .about__info .skills, .about__info .interests {
-    flex-basis: 50%;
-  }
-}
 @media (min-width: 1024px) {
   .about__info {
     flex-direction: column;
-  }
-}
-.about .skills .subtitle,
-.about .interests .subtitle {
-  text-align: left;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .about .skills .subtitle,
-.about .interests .subtitle {
-    text-align: center;
   }
 }
 .about__cv .button {
@@ -827,7 +796,6 @@ section {
 @media (min-width: 768px) {
   .skills__text {
     font-size: 16px;
-    text-align: center;
   }
 }
 
@@ -837,11 +805,6 @@ section {
   flex-wrap: wrap;
   justify-content: start;
   gap: 16px 16px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .interests__list {
-    justify-content: center;
-  }
 }
 @media (min-width: 1024px) {
   .interests__list {
