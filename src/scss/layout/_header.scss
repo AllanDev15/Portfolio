@@ -129,6 +129,10 @@
   color: white;
   height: calc(100vh - 63px);
 
+  @include utils.tablet {
+    background: linear-gradient(to right, #0d0d0d 30%, transparent);
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -154,7 +158,8 @@
   width: 100%;
 
   &__title {
-    margin-bottom: 16px;
+    margin-bottom: 2rem;
+    color: utils.$primaryColor-600;
   }
   &__description {
     font-size: 1.3333rem;

@@ -625,6 +625,11 @@ section {
   color: white;
   height: calc(100vh - 63px);
 }
+@media (min-width: 768px) {
+  .hero {
+    background: linear-gradient(to right, #0d0d0d 30%, transparent);
+  }
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -647,7 +652,8 @@ section {
   width: 100%;
 }
 .header__title {
-  margin-bottom: 16px;
+  margin-bottom: 2rem;
+  color: #008bff;
 }
 .header__description {
   font-size: 1.3333rem;
