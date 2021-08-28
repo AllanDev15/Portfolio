@@ -52,12 +52,38 @@
     background-color: utils.$white;
     border-radius: 6px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    position: relative;
+
+    &:not(.technical-skills__item--seconday)::after {
+      content: '';
+      width: 0px;
+      height: 3px;
+      position: absolute;
+      margin: auto;
+      bottom: 0px;
+      transition: width 0.3s ease-in-out;
+    }
+
+    @for $item from 1 to 9 {
+      &:nth-child(#{$item}):not(.technical-skills__item--seconday)::after {
+        background-color: nth(utils.$tech-colors, $item);
+      }
+
+      &:nth-child(#{$item}):hover:not(.technical-skills__item--seconday)::after {
+        width: 100%;
+      }
+
+      &:nth-child(#{$item}):hover #{$self}__icon {
+        color: nth(utils.$tech-colors, $item);
+      }
+    }
 
     #{$self}__icon {
       display: flex;
+      color: utils.$dark;
+      transition: color 0.2s ease;
       .icon {
         font-size: 26px;
-        fill: utils.$dark;
         @include utils.tablet {
           font-size: 30px;
         }

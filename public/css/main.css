@@ -918,13 +918,96 @@ section {
   background-color: #f6f5f6;
   border-radius: 6px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+.technical-skills__item:not(.technical-skills__item--seconday)::after {
+  content: "";
+  width: 0px;
+  height: 3px;
+  position: absolute;
+  margin: auto;
+  bottom: 0px;
+  transition: width 0.3s ease-in-out;
+}
+.technical-skills__item:nth-child(1):not(.technical-skills__item--seconday)::after {
+  background-color: #f16529;
+}
+.technical-skills__item:nth-child(1):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(1):hover .technical-skills__icon {
+  color: #f16529;
+}
+.technical-skills__item:nth-child(2):not(.technical-skills__item--seconday)::after {
+  background-color: #2965f1;
+}
+.technical-skills__item:nth-child(2):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(2):hover .technical-skills__icon {
+  color: #2965f1;
+}
+.technical-skills__item:nth-child(3):not(.technical-skills__item--seconday)::after {
+  background-color: #cd6799;
+}
+.technical-skills__item:nth-child(3):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(3):hover .technical-skills__icon {
+  color: #cd6799;
+}
+.technical-skills__item:nth-child(4):not(.technical-skills__item--seconday)::after {
+  background-color: #f7e018;
+}
+.technical-skills__item:nth-child(4):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(4):hover .technical-skills__icon {
+  color: #f7e018;
+}
+.technical-skills__item:nth-child(5):not(.technical-skills__item--seconday)::after {
+  background-color: #de4c36;
+}
+.technical-skills__item:nth-child(5):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(5):hover .technical-skills__icon {
+  color: #de4c36;
+}
+.technical-skills__item:nth-child(6):not(.technical-skills__item--seconday)::after {
+  background-color: #6181b6;
+}
+.technical-skills__item:nth-child(6):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(6):hover .technical-skills__icon {
+  color: #6181b6;
+}
+.technical-skills__item:nth-child(7):not(.technical-skills__item--seconday)::after {
+  background-color: #672079;
+}
+.technical-skills__item:nth-child(7):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(7):hover .technical-skills__icon {
+  color: #672079;
+}
+.technical-skills__item:nth-child(8):not(.technical-skills__item--seconday)::after {
+  background-color: #eb171f;
+}
+.technical-skills__item:nth-child(8):hover:not(.technical-skills__item--seconday)::after {
+  width: 100%;
+}
+.technical-skills__item:nth-child(8):hover .technical-skills__icon {
+  color: #eb171f;
 }
 .technical-skills__item .technical-skills__icon {
   display: flex;
+  color: #31343c;
+  transition: color 0.2s ease;
 }
 .technical-skills__item .technical-skills__icon .icon {
   font-size: 26px;
-  fill: #31343c;
 }
 @media (min-width: 768px) {
   .technical-skills__item .technical-skills__icon .icon {
