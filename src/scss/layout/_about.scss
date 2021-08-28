@@ -141,25 +141,45 @@
   }
   &__item {
     text-align: center;
-    border: 1px solid utils.$black;
+    border: 1px solid rgba(utils.$black, 0.25);
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
     padding: 6px 10px;
+    transition: all 0.3s ease-out;
+    @include utils.tablet {
+      padding: 10px;
+      max-width: 45px;
+      justify-content: start;
+      overflow: hidden;
+    }
+    @media (min-width: utils.$tablet) {
+      &:hover {
+        max-width: 142px;
+      }
+      &:hover .interests__text {
+        visibility: visible;
+      }
+    }
   }
   &__icon {
     display: flex;
     fill: utils.$secondaryColor-400;
     & .icon {
-      font-size: 20px;
+      font-size: 18px;
       @include utils.tablet {
-        font-size: 18px;
+        font-size: 20px;
       }
     }
   }
   &__text {
-    font-size: 14px;
+    transition: all 0.3s ease;
+    display: block;
+    @include utils.tablet {
+      pointer-events: none;
+      visibility: hidden;
+    }
   }
 }

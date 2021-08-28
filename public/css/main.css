@@ -850,28 +850,52 @@ section {
 }
 .interests__item {
   text-align: center;
-  border: 1px solid #262728;
+  border: 1px solid rgba(38, 39, 40, 0.25);
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
+  transition: all 0.3s ease-out;
+}
+@media (min-width: 768px) {
+  .interests__item {
+    padding: 10px;
+    max-width: 45px;
+    justify-content: start;
+    overflow: hidden;
+  }
+}
+@media (min-width: 768px) {
+  .interests__item:hover {
+    max-width: 142px;
+  }
+  .interests__item:hover .interests__text {
+    visibility: visible;
+  }
 }
 .interests__icon {
   display: flex;
   fill: #ffa600;
 }
 .interests__icon .icon {
-  font-size: 20px;
+  font-size: 18px;
 }
 @media (min-width: 768px) {
   .interests__icon .icon {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 .interests__text {
-  font-size: 14px;
+  transition: all 0.3s ease;
+  display: block;
+}
+@media (min-width: 768px) {
+  .interests__text {
+    pointer-events: none;
+    visibility: hidden;
+  }
 }
 
 .technical-skills {
