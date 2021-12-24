@@ -617,6 +617,17 @@ section {
 .parallax::-webkit-scrollbar {
   display: none;
 }
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background: url("../assets/img/parallax3.webp");
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(0.5);
+  transform: translateZ(-4px) translateX(-4px) scale(calc(1.05 + ((-4 * -1) / 5)));
+  z-index: -1;
+}
 
 .hero {
   display: flex;
@@ -629,17 +640,6 @@ section {
   .hero {
     background: linear-gradient(to right, #0d0d0d 30%, transparent);
   }
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0px;
-  background: url("../assets/img/parallax3.webp");
-  background-size: cover;
-  background-position: center center;
-  filter: brightness(0.5);
-  transform: translateZ(-4px) translateX(-4px) scale(calc(1.05 + ((-4 * -1) / 5)));
-  z-index: -1;
 }
 
 @media (min-width: 768px) {

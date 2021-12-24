@@ -121,17 +121,6 @@
   &::-webkit-scrollbar {
     display: none;
   }
-}
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
-  height: calc(100vh - 63px);
-
-  @include utils.tablet {
-    background: linear-gradient(to right, #0d0d0d 30%, transparent);
-  }
 
   &::before {
     content: '';
@@ -144,6 +133,17 @@
     // scale calculation: 1 + ((z transform value * -1)  / perspective)
     transform: translateZ(-4px) translateX(-4px) scale(calc(1.05 + ((-4 * -1) / 5)));
     z-index: -1;
+  }
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  height: calc(100vh - 63px);
+
+  @include utils.tablet {
+    background: linear-gradient(to right, #0d0d0d 30%, transparent);
   }
 }
 @media (min-width: 768px) {
