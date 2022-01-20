@@ -610,7 +610,7 @@ section {
 .parallax {
   overflow-x: hidden;
   overflow-y: auto;
-  perspective: 5px;
+  perspective: 4px;
   height: calc(100vh - 63px);
   position: relative;
 }
@@ -625,7 +625,7 @@ section {
   background-size: cover;
   background-position: center center;
   filter: brightness(0.5);
-  transform: translateZ(-4px) translateX(-4px) scale(calc(1.05 + ((-4 * -1) / 5)));
+  transform: translateZ(-4px) scale(calc(1 + ((-4 * -1) / 4)));
   z-index: -1;
 }
 
