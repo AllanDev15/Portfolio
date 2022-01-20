@@ -1,8 +1,9 @@
 @use '../utils';
 
 .technical-skills {
+  color: utils.$whiteInDark;
   $self: &;
-  background-color: rgba(utils.$primaryColor-800, 0.06);
+  background-color: utils.$dark;
   &__title:after {
     background-color: utils.$secondaryColor-400;
   }
@@ -91,7 +92,12 @@
     }
     #{$self}__text {
       font-size: 16px;
+      color: utils.$black;
     }
+  }
+
+  &__item--seconday {
+    color: utils.$black;
   }
 
   &__other {

@@ -957,13 +957,13 @@ section {
   color: #cd6799;
 }
 .technical-skills__item:nth-child(4):not(.technical-skills__item--seconday)::after {
-  background-color: #f7e018;
+  background-color: #f2d354;
 }
 .technical-skills__item:nth-child(4):hover:not(.technical-skills__item--seconday)::after {
   width: 100%;
 }
 .technical-skills__item:nth-child(4):hover .technical-skills__icon {
-  color: #f7e018;
+  color: #f2d354;
 }
 .technical-skills__item:nth-child(5):not(.technical-skills__item--seconday)::after {
   background-color: #de4c36;
@@ -1016,6 +1016,10 @@ section {
 }
 .technical-skills__item .technical-skills__text {
   font-size: 16px;
+  color: #262728;
+}
+.technical-skills__item--seconday {
+  color: #262728;
 }
 .technical-skills__other .technical-skills__list {
   display: flex;
