@@ -79,6 +79,11 @@ section {
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
+
+  &--modal {
+    max-width: 1196px;
+    width: 95%;
+  }
 }
 
 .whiteLink {
@@ -134,18 +139,31 @@ section {
 
 .button {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: utils.$secondaryColor-400;
-  border: 1px solid #cc8500;
+  padding: 10px 24px;
   font-size: 14px;
-  color: #000000;
-  text-align: center;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
-  &:hover {
-    background-color: utils.$secondaryColor-500;
-  }
   @include utils.tablet {
     font-size: 16px;
+  }
+
+  &--primary {
+    min-width: 120px;
+    background-color: utils.$secondaryColor-400;
+    border: 1px solid #cc8500;
+    color: #000000;
+    &:hover {
+      background-color: utils.$secondaryColor-500;
+    }
+  }
+
+  &--icon {
+    padding: 8px 14px;
+    .icon {
+      font-size: 28px;
+    }
   }
 }
