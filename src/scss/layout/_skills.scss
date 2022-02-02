@@ -74,21 +74,14 @@
         width: 100%;
       }
 
-      &:nth-child(#{$item}):hover #{$self}__icon {
+      &:nth-child(#{$item}) #{$self}__icon {
         color: nth(utils.$tech-colors, $item);
       }
     }
 
     #{$self}__icon {
+      width: 26px;
       display: flex;
-      color: utils.$dark;
-      transition: color 0.2s ease;
-      .icon {
-        font-size: 26px;
-        @include utils.tablet {
-          font-size: 30px;
-        }
-      }
     }
     #{$self}__text {
       font-size: 16px;
