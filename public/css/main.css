@@ -613,6 +613,9 @@ section {
   gap: 8px;
   fill: #31343c;
 }
+.navigation-mobile__item .icon {
+  font-size: 20px;
+}
 .navigation-mobile__text {
   font-size: 10px;
 }

@@ -101,6 +101,9 @@
     align-items: center;
     gap: 8px;
     fill: utils.$dark;
+    .icon {
+      font-size: 20px;
+    }
   }
   &__text {
     font-size: 10px;
