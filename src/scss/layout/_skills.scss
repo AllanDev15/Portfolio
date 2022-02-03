@@ -65,7 +65,7 @@
       transition: width 0.3s ease-in-out;
     }
 
-    @for $item from 1 to 9 {
+    @for $item from 1 to 8 {
       &:nth-child(#{$item}):not(.technical-skills__item--seconday)::after {
         background-color: nth(utils.$tech-colors, $item);
       }
@@ -80,8 +80,12 @@
     }
 
     #{$self}__icon {
-      width: 26px;
       display: flex;
+
+      .icon {
+        height: 28px;
+        max-width: 40px;
+      }
     }
     #{$self}__text {
       font-size: 16px;

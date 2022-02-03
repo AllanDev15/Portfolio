@@ -973,13 +973,13 @@ section {
   color: #cd6799;
 }
 .technical-skills__item:nth-child(4):not(.technical-skills__item--seconday)::after {
-  background-color: #f2d354;
+  background-color: #f7df1e;
 }
 .technical-skills__item:nth-child(4):hover:not(.technical-skills__item--seconday)::after {
   width: 100%;
 }
 .technical-skills__item:nth-child(4) .technical-skills__icon {
-  color: #f2d354;
+  color: #f7df1e;
 }
 .technical-skills__item:nth-child(5):not(.technical-skills__item--seconday)::after {
   background-color: #de4c36;
@@ -991,35 +991,29 @@ section {
   color: #de4c36;
 }
 .technical-skills__item:nth-child(6):not(.technical-skills__item--seconday)::after {
-  background-color: #6181b6;
+  background-color: #7276ac;
 }
 .technical-skills__item:nth-child(6):hover:not(.technical-skills__item--seconday)::after {
   width: 100%;
 }
 .technical-skills__item:nth-child(6) .technical-skills__icon {
-  color: #6181b6;
+  color: #7276ac;
 }
 .technical-skills__item:nth-child(7):not(.technical-skills__item--seconday)::after {
-  background-color: #672079;
+  background-color: #e68a10;
 }
 .technical-skills__item:nth-child(7):hover:not(.technical-skills__item--seconday)::after {
   width: 100%;
 }
 .technical-skills__item:nth-child(7) .technical-skills__icon {
-  color: #672079;
-}
-.technical-skills__item:nth-child(8):not(.technical-skills__item--seconday)::after {
-  background-color: #eb171f;
-}
-.technical-skills__item:nth-child(8):hover:not(.technical-skills__item--seconday)::after {
-  width: 100%;
-}
-.technical-skills__item:nth-child(8) .technical-skills__icon {
-  color: #eb171f;
+  color: #e68a10;
 }
 .technical-skills__item .technical-skills__icon {
-  width: 26px;
   display: flex;
+}
+.technical-skills__item .technical-skills__icon .icon {
+  height: 28px;
+  max-width: 40px;
 }
 .technical-skills__item .technical-skills__text {
   font-size: 16px;
