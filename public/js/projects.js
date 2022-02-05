@@ -1,7 +1,7 @@
 const projectsContainer = document.querySelector('.projects__content');
 let projectsObj;
 
-fetch('/public/data.json')
+fetch('./data.json')
   .then((response) => response.json())
   .then((data) => {
     projectsObj = data.projects;
