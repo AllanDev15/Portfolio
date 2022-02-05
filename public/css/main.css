@@ -1193,6 +1193,7 @@ section {
   pointer-events: initial;
 }
 .modal .project__img {
+  margin: 0px;
   max-height: 650px;
   height: auto;
   border-top-left-radius: 16px;
@@ -1281,15 +1282,17 @@ section {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.modal .project__tools .tool p {
   font-size: 14px;
 }
 @media (min-width: 768px) {
-  .modal .project__tools .tool {
+  .modal .project__tools .tool p {
     font-size: 16px;
   }
 }
 .modal .project__tools .tool .icon {
-  font-size: 20px;
+  height: 25px;
 }
 .modal .project__buttons {
   width: 100%;
