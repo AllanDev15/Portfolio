@@ -1,0 +1,92 @@
+{
+  "projects": [
+    {
+      "name": "gdlwebcamp",
+      "title": "GDL Webcamp",
+      "description": "",
+      "preview": "./assets/img/gdlwebcamp_project.webp",
+      "mainTechnologies": ["CSS", "JS", "PHP", "MySQL"],
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "./assets/icons/html-icon.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "./assets/icons/css-icon.svg"
+        },
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        },
+        {
+          "name": "JQuery",
+          "icon": "./assets/icons/jquery-icon.svg"
+        },
+        {
+          "name": "PHP",
+          "icon": "./assets/icons/php-icon.svg"
+        },
+        {
+          "name": "MySQL",
+          "icon": "./assets/icons/mysql-icon.svg"
+        }
+      ],
+      "tipo": "Proyecto de Curso",
+      "link": "https://gdlwebcamp-udemy.herokuapp.com/",
+      "repository": "https://github.com/AllanDev15/GDLWebcamp-DesarrolloWebCompleto"
+    },
+    {
+      "name": "bienesraices",
+      "title": "Bienes Raices",
+      "description": "",
+      "preview": "./assets/img/bienesraices_project.webp",
+      "mainTechnologies": ["HTML", "CSS"],
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "./assets/icons/html-icon.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "./assets/icons/css-icon.svg"
+        }
+      ],
+      "tipo": "Proyecto de Curso",
+      "link": "https://allandev15.github.io/BienesRaicesV1-DesarrolloWebCompleto/",
+      "repository": "https://github.com/AllanDev15/BienesRaicesV1-DesarrolloWebCompleto"
+    },
+    {
+      "name": "agenda",
+      "title": "Agenda de Contactos",
+      "description": "",
+      "preview": "./assets/img/agenda_project.webp",
+      "mainTechnologies": ["HTML", "CSS", "JS", "PHP"],
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "./assets/icons/html-icon.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "./assets/icons/css-icon.svg"
+        },
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        },
+        {
+          "name": "PHP",
+          "icon": "./assets/icons/php-icon.svg"
+        },
+        {
+          "name": "MySQL",
+          "icon": "./assets/icons/mysql-icon.svg"
+        }
+      ],
+      "tipo": "Proyecto de Curso",
+      "link": "https://agenda-af.herokuapp.com/",
+      "repository": "https://github.com/AllanDev15/Agenda-DesarrolloWebCompleto"
+    }
+  ]
+}

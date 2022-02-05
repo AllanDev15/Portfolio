@@ -161,6 +161,7 @@
     }
 
     &__img {
+      margin: 0px;
       max-height: 650px;
       height: auto;
       border-top-left-radius: 16px;
@@ -241,14 +242,16 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 14px;
 
-        @include utils.tablet {
-          font-size: 16px;
+        p {
+          font-size: 14px;
+          @include utils.tablet {
+            font-size: 16px;
+          }
         }
 
         & .icon {
-          font-size: 20px;
+          height: 25px;
         }
       }
     }
