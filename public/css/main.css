@@ -1325,4 +1325,95 @@ section {
   }
 }
 
+.training .title::after {
+  background-color: #ffa600;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  gap: 90px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .education {
+    margin: 0;
+    flex-direction: row;
+  }
+}
+.education__info {
+  padding-left: 40px;
+  font-size: 18px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .education__info {
+    padding-left: 0px;
+    padding-bottom: 32px;
+  }
+}
+.education__info::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #0077ff;
+  border: 2px solid #f6f5f6;
+  z-index: 1;
+}
+@media (min-width: 480px) {
+  .education__info::before {
+    height: 30px;
+    width: 30px;
+    left: -12px;
+  }
+}
+@media (min-width: 768px) {
+  .education__info::before {
+    top: unset;
+    bottom: -12px;
+    left: 0px;
+  }
+}
+.education__time {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.education__name {
+  margin-bottom: 8px;
+}
+.education::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  width: 5px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #008bff 85%, transparent);
+}
+@media (min-width: 480px) {
+  .education::after {
+    height: 100%;
+    width: 6px;
+  }
+}
+@media (min-width: 768px) {
+  .education::after {
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(to right, #008bff 60%, transparent 95%);
+  }
+}
+@media (min-width: 1024px) {
+  .education::after {
+    background: linear-gradient(to right, #008bff 50%, transparent 85%);
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

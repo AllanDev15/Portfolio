@@ -1,0 +1,88 @@
+@use '../utils';
+
+.training {
+  .title::after {
+    background-color: utils.$secondaryColor-400;
+  }
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  gap: 90px;
+  position: relative;
+
+  @include utils.tablet {
+    margin: 0;
+    flex-direction: row;
+  }
+
+  &__info {
+    padding-left: 40px;
+    font-size: 18px;
+    position: relative;
+
+    @include utils.tablet {
+      padding-left: 0px;
+      padding-bottom: 32px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: -10px;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background-color: utils.$primaryColor-700;
+      border: 2px solid utils.$white;
+      z-index: 1;
+
+      @include utils.mobile {
+        height: 30px;
+        width: 30px;
+        left: -12px;
+      }
+      @include utils.tablet {
+        top: unset;
+        bottom: -12px;
+        left: 0px;
+      }
+    }
+  }
+
+  &__time {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  &__name {
+    margin-bottom: 8px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 100%;
+    width: 5px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, utils.$primaryColor-600 85%, transparent);
+
+    @include utils.mobile {
+      height: 100%;
+      width: 6px;
+    }
+    @include utils.tablet {
+      height: 6px;
+      width: 100%;
+      background: linear-gradient(to right, utils.$primaryColor-600 60%, transparent 95%);
+    }
+    @include utils.desktop {
+      background: linear-gradient(to right, utils.$primaryColor-600 50%, transparent 85%);
+    }
+  }
+}
