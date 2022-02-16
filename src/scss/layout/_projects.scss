@@ -9,20 +9,41 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    // max-height: 305px;
     gap: utils.$spaceXL;
     --translate: translateY(0);
 
     @include utils.mobile {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+
+    &.expanded {
+      max-height: auto;
+    }
+  }
+
+  &__load-more {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    .button {
+      flex-basis: 35%;
+    }
+    a.button {
+      display: none;
+    }
   }
 }
 
 .project-card {
+  &.fade {
+    opacity: 0;
+  }
+  opacity: 1;
   background-color: utils.$whiteInDark;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
   border-radius: 12px;
-  transition: box-shadow ease 0.3s, transform 0.2s ease;
+  transition: box-shadow ease 0.3s, transform 0.2s ease, opacity 0.4s ease;
   $self: &;
 
   &:hover {
@@ -53,7 +74,7 @@
     transition-timing-function: linear;
   }
 
-  @for $item from 1 to 3 {
+  @for $item from 1 to 6 {
     &:nth-child(#{$item}):hover &__img {
       transition-duration: nth(utils.$projectDurations, $item);
     }

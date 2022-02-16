@@ -1,15 +1,28 @@
 const projectsContainer = document.querySelector('.projects__content');
-let projectsObj;
+const btnLoadMore = document.querySelector('#loadMoreProjects');
+// const btnAllProjects = document.querySelector('#allProjects');
+
+let projects;
 
 fetch('./data.json')
   .then((response) => response.json())
   .then((data) => {
-    projectsObj = data.projects;
+    projects = data.projects.sort((a, b) => a['order'] - b['order']);
     for (let i = 0; i < 3; i++) {
-      showProjectCard(projectsObj[i]);
+      showProjectCard(projects[i]);
     }
   })
   .then(() => calcPreviewAutoscroll());
+
+btnLoadMore.addEventListener('click', () => {
+  if (projectsContainer.children.length !== projects.length) {
+    for (let i = 3; i < 6; i++) {
+      showProjectCard(projects[i], true);
+    }
+    // btnLoadMore.remove();
+    // btnAllProjects.style.display = 'flex';
+  }
+});
 
 function calcPreviewAutoscroll() {
   // Control the amount of autoscroll in the preview of projects according to the element height
@@ -19,7 +32,7 @@ function calcPreviewAutoscroll() {
   document.querySelector('.projects__content').style.setProperty('--translate', translateProperty);
 }
 
-function showProjectCard(project) {
+function showProjectCard(project, isFade) {
   const projectCard = document.createElement('div');
   projectCard.className = 'project-card';
   projectCard.dataset.project = project.name;
@@ -53,10 +66,17 @@ function showProjectCard(project) {
   cardInfo.appendChild(cardTechnologies);
   projectCard.appendChild(cardInfo);
   projectsContainer.appendChild(projectCard);
+
+  if (isFade) {
+    projectCard.classList.add('fade');
+    setTimeout(() => {
+      projectCard.classList.remove('fade');
+    }, 50);
+  }
 }
 
 function createProjectModal(projectName) {
-  let projectObj = projectsObj.filter((project) => project.name === projectName);
+  let projectObj = projects.filter((project) => project.name === projectName);
   projectObj = projectObj[0];
 
   const projectContainer = document.createElement('article');
