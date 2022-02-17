@@ -1,5 +1,46 @@
 @use '../utils';
 
+.loader {
+  position: absolute;
+  inset: 0;
+  background-color: utils.$dark;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+
+  &__container {
+    color: white;
+    position: relative;
+    height: 100%;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 2.5rem;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  &__logo.show {
+    opacity: 1;
+  }
+  &__logo.move {
+    top: 16px;
+    left: 0px;
+    transform: none;
+    font-size: 2rem;
+    @include utils.tablet {
+      top: 24px;
+    }
+  }
+}
+.loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .navbar {
   $self: &;
   width: 100%;

@@ -15,6 +15,11 @@
 </head>
 
 <body>
+  <div class="loader">
+    <div class="loader__container container">
+      <h2 class="loader__logo">Allan Flores</h2>
+    </div>
+  </div>
   <div class="navbar">
     <div class="container navbar__content">
       <h2 class="navbar__logo"> <a class="navbar__title" href="#">Allan Flores</a></h2>
@@ -352,12 +357,27 @@
 
   <script src="js/main.js" type="module"></script>
   <script>
-    const header = document.querySelector('.header__title');
+    const loader = document.querySelector('.loader');
+    const loaderLogo = document.querySelector('.loader__logo');
 
-    header.addEventListener('click', () => {
-      document.body.requestFullscreen();
-    })
+    if (sessionStorage.getItem('isSecondTime')) {
+      loader.remove();
+    } else {
+      loaderLogo.classList.add('show');
+      setTimeout(() => {
+        loaderLogo.classList.add('move');
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+          setTimeout(() => {
+            loader.remove();
+          }, 500);
+        }, 500);
+      }, 1000);
+      sessionStorage.setItem('isSecondTime', true);
+    }
   </script>
+  <script src="js/main.js" type="module" defer></script>
+
 </body>
 
 </html>
