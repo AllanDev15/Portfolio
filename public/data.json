@@ -133,5 +133,159 @@
       "link": "https://blogcafe-af.netlify.app/",
       "repository": "https://github.com/AllanDev15/BlogCafe-DesarrolloWebCompleto"
     }
+  ],
+  "courses": [
+    {
+      "order": "1",
+      "name": "Desarrollo Web Completo",
+      "platform": "Udemy",
+      "hours": "54hrs",
+      "certificate": "https://www.udemy.com/certificate/UC-e71e073c-f10a-414e-a6f0-c37c27f6ae4f/",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "./assets/icons/html-icon.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "./assets/icons/css-icon.svg"
+        },
+        {
+          "name": "SASS",
+          "icon": "./assets/icons/sass-icon.svg"
+        },
+        {
+          "name": "JS",
+          "icon": "./assets/icons/javascript-icon.svg"
+        },
+        {
+          "name": "JQuery",
+          "icon": "./assets/icons/jquery-icon.svg"
+        },
+        {
+          "name": "PHP",
+          "icon": "./assets/icons/php-icon.svg"
+        },
+        {
+          "name": "MySQL",
+          "icon": "./assets/icons/mysql-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "2",
+      "name": "Frontend Developer",
+      "platform": "Platzi",
+      "hours": "3hrs",
+      "certificate": "https://platzi.com/p/allanfl15/curso/2467-frontend-developer/diploma/detalle/",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "./assets/icons/html-icon.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "./assets/icons/css-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "3",
+      "name": "Curso Práctico de Frontend Developer",
+      "platform": "Platzi",
+      "hours": "3hrs",
+      "certificate": "https://platzi.com/p/allanfl15/curso/2477-frontend-developer-practico/diploma/detalle/",
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "./assets/icons/html-icon.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "./assets/icons/css-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "6",
+      "name": "Curso Básico de Javascript",
+      "platform": "Platzi",
+      "hours": "3hrs",
+      "certificate": "https://platzi.com/p/allanfl15/curso/1814-basico-javascript/diploma/detalle/",
+      "technologies": [
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "7",
+      "name": "Curso Práctico de Javascript",
+      "platform": "Platzi",
+      "hours": "4hrs",
+      "certificate": "https://platzi.com/p/allanfl15/curso/2327-javascript-practico/diploma/detalle/",
+      "technologies": [
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "4",
+      "name": "ECMAScript 6+",
+      "platform": "Platzi",
+      "hours": "2hrs",
+      "certificate": "https://platzi.com/p/allanfl15/curso/1815-ecmascript-6/diploma/detalle/",
+      "technologies": [
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "5",
+      "name": "Asincronismo con Javascript",
+      "platform": "Platzi",
+      "hours": "1hr",
+      "certificate": "https://platzi.com/p/allanfl15/curso/1789-asincronismo-js/diploma/detalle/",
+      "technologies": [
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "8",
+      "name": "Closures y Scope en JavaScript",
+      "platform": "Platzi",
+      "hours": "1hr",
+      "certificate": "https://platzi.com/p/allanfl15/curso/1807-scope/diploma/detalle/",
+      "technologies": [
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        }
+      ]
+    },
+    {
+      "order": "10",
+      "name": "Fundamentos de Diseño de Interfaces UI y UX",
+      "platform": "Platzi",
+      "hours": "4hrs",
+      "certificate": "https://platzi.com/p/allanfl15/curso/1754-diseno-interfaces-ux/diploma/detalle/",
+      "technologies": []
+    },
+    {
+      "order": "9",
+      "name": "Curso de Postman",
+      "platform": "Platzi",
+      "hours": "2hrs",
+      "certificate": "https://platzi.com/p/allanfl15/curso/1765-postman/diploma/detalle/",
+      "technologies": []
+    }
   ]
 }

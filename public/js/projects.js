@@ -1,18 +1,8 @@
+import { projects } from './main.js';
+
 const projectsContainer = document.querySelector('.projects__content');
 const btnLoadMore = document.querySelector('#loadMoreProjects');
 // const btnAllProjects = document.querySelector('#allProjects');
-
-let projects;
-
-fetch('./data.json')
-  .then((response) => response.json())
-  .then((data) => {
-    projects = data.projects.sort((a, b) => a['order'] - b['order']);
-    for (let i = 0; i < 3; i++) {
-      showProjectCard(projects[i]);
-    }
-  })
-  .then(() => calcPreviewAutoscroll());
 
 btnLoadMore.addEventListener('click', () => {
   if (projectsContainer.children.length !== projects.length) {
@@ -174,4 +164,4 @@ function createProjectModal(projectName) {
   return projectContainer;
 }
 
-export { createProjectModal, calcPreviewAutoscroll };
+export { createProjectModal, calcPreviewAutoscroll, showProjectCard };

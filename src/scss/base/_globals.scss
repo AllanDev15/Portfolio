@@ -86,6 +86,14 @@ section {
   }
 }
 
+.link,
+.link:link,
+.link:visited {
+  color: utils.$primaryColor-700;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 .whiteLink {
   color: rgba(utils.$white, 0.5);
   fill: rgba(utils.$white, 0.5);
@@ -145,7 +153,7 @@ section {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   @include utils.tablet {
     font-size: 16px;
   }
@@ -158,6 +166,10 @@ section {
     &:hover {
       background-color: utils.$secondaryColor-500;
     }
+  }
+
+  &--sm {
+    font-size: 14px;
   }
 
   &--icon {

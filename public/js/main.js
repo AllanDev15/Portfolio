@@ -1,14 +1,31 @@
-import { createProjectModal, calcPreviewAutoscroll } from './projects.js';
+import { createProjectModal, calcPreviewAutoscroll, showProjectCard } from './projects.js';
+import { showCourses } from './courses.js';
+
+fetch('./data.json')
+  .then((response) => response.json())
+  .then((data) => {
+    projects = data.projects.sort((a, b) => a['order'] - b['order']);
+    courses = data.courses.sort((a, b) => a['order'] - b['order']);
+    for (let i = 0; i < 3; i++) {
+      showProjectCard(projects[i]);
+    }
+    for (let i = 0; i < 5; i++) {
+      showCourses(courses[i]);
+    }
+  })
+  .then(() => calcPreviewAutoscroll());
+
+let projects, courses;
 
 scrollNavbar();
 window.addEventListener('resize', () => calcPreviewAutoscroll());
 
 // Modal projects
-const projects = document.querySelector('.projects__content');
+const projectsContainer = document.querySelector('.projects__content');
 const modal = document.querySelector('#modal');
 let modalProject;
 
-projects.addEventListener('click', (e) => {
+projectsContainer.addEventListener('click', (e) => {
   const selected = e.target;
   const projectSelected = e.target.dataset.project;
   if (selected.classList.contains('project-card')) {
@@ -58,3 +75,5 @@ function scrollNavbar() {
     }
   });
 }
+
+export { projects, courses };
