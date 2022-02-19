@@ -478,7 +478,7 @@ section {
 }
 @media (min-width: 1024px) {
   .title {
-    margin-bottom: 48px;
+    margin-bottom: 56px;
   }
 }
 
@@ -1116,15 +1116,20 @@ section {
   max-height: auto;
 }
 .projects__load-more {
-  margin-top: 64px;
+  margin-top: 48px;
   display: flex;
   justify-content: center;
 }
 .projects__load-more .button {
-  flex-basis: 35%;
+  flex-basis: 100%;
 }
 .projects__load-more a.button {
   display: none;
+}
+@media (min-width: 768px) {
+  .projects__load-more .button {
+    flex-basis: 35%;
+  }
 }
 
 .project-card {
@@ -1500,7 +1505,7 @@ section {
 }
 
 .courses {
-  margin-top: 96px;
+  margin-top: 80px;
 }
 .courses__content {
   margin-top: 24px;
@@ -1516,7 +1521,7 @@ section {
 .courses__load-all .button {
   width: 100%;
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .courses__load-all .button {
     width: 35%;
   }

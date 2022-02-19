@@ -88,7 +88,7 @@
 }
 
 .courses {
-  margin-top: 96px;
+  margin-top: 80px;
 
   &__content {
     margin-top: 24px;
@@ -105,7 +105,7 @@
       width: 100%;
     }
   }
-  @include utils.mobile {
+  @include utils.tablet {
     &__load-all .button {
       width: 35%;
     }
