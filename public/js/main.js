@@ -20,6 +20,42 @@ let projects, courses;
 scrollNavbar();
 window.addEventListener('resize', () => calcPreviewAutoscroll());
 
+// Interests
+const interestList = document.querySelector('.interests__list');
+interestList.addEventListener('mouseover', (e) => {
+  if (e.target.classList.contains('interests__item')) {
+    const item = e.target;
+    const expanded = interestList.querySelector('.expand');
+
+    if (expanded) {
+      expanded.classList.remove('expand');
+    }
+    item.classList.add('expand');
+  }
+});
+
+// CV buttons
+const cvBtn = document.querySelector('#cv');
+const cvBtnMobile = document.querySelector('#cv-mobile');
+let digitalBtn, printBtn;
+
+cvBtn.addEventListener('click', () => showCvButtons(cvBtn));
+cvBtnMobile.addEventListener('click', () => showCvButtons(cvBtnMobile));
+
+function showCvButtons(element) {
+  digitalBtn = element.parentElement.querySelector('.about__button--digital');
+  printBtn = element.parentElement.querySelector('.about__button--print');
+  digitalBtn.style.display = 'flex';
+  printBtn.style.display = 'flex';
+
+  setTimeout(() => {
+    digitalBtn.classList.add('show');
+    printBtn.classList.add('show');
+  }, 100);
+
+  element.classList.add('hide');
+}
+
 // Modal projects
 const projectsContainer = document.querySelector('.projects__content');
 const modal = document.querySelector('#modal');

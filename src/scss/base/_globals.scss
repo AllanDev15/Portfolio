@@ -133,10 +133,7 @@ section {
 }
 
 .principal-text {
-  font-size: 14px;
-  @include utils.tablet {
-    font-size: 16px;
-  }
+  font-size: 16px;
 }
 .secondary-text {
   font-size: 1rem;
