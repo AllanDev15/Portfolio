@@ -4,6 +4,7 @@
       "order": "2",
       "name": "gdlwebcamp",
       "title": "GDL Webcamp",
+      "type": "Proyecto de Curso",
       "description": "",
       "preview": "./assets/img/gdlwebcamp_project.webp",
       "mainTechnologies": ["CSS", "JS", "PHP", "MySQL"],
@@ -38,9 +39,10 @@
       "repository": "https://github.com/AllanDev15/GDLWebcamp-DesarrolloWebCompleto"
     },
     {
-      "order": "4",
+      "order": "5",
       "name": "bienesraices",
       "title": "Bienes Raices",
+      "type": "Proyecto de Curso",
       "description": "",
       "preview": "./assets/img/bienesraices_project.webp",
       "mainTechnologies": ["HTML", "CSS"],
@@ -62,6 +64,7 @@
       "order": "1",
       "name": "tictactoe",
       "title": "Tic Tac Toe",
+      "type": "Proyecto de Práctica",
       "description": "",
       "preview": "./assets/img/tictactoe_project.webp",
       "mainTechnologies": ["React", "SCSS"],
@@ -83,6 +86,7 @@
       "order": "3",
       "name": "agenda",
       "title": "Agenda de Contactos",
+      "type": "Proyecto de Curso",
       "description": "",
       "preview": "./assets/img/agenda_project.webp",
       "mainTechnologies": ["HTML", "CSS", "JS", "PHP"],
@@ -113,9 +117,10 @@
       "repository": "https://github.com/AllanDev15/Agenda-DesarrolloWebCompleto"
     },
     {
-      "order": "5",
+      "order": "6",
       "name": "blogcafe",
       "title": "Blog de Café",
+      "type": "Proyecto de Curso",
       "description": "",
       "preview": "./assets/img/blogcafe_project.webp",
       "mainTechnologies": ["HTML", "CSS"],
@@ -132,6 +137,32 @@
       "tipo": "Proyecto de Curso",
       "link": "https://blogcafe-af.netlify.app/",
       "repository": "https://github.com/AllanDev15/BlogCafe-DesarrolloWebCompleto"
+    },
+    {
+      "order": "4",
+      "name": "figurasgeometricas",
+      "title": "Figuras Geométricas",
+      "type": "Proyecto Personal",
+      "description": "",
+      "preview": "./assets/img/figurasgeometricas_project.webp",
+      "mainTechnologies": ["HTML", "Tailwind", "JS"],
+      "technologies": [
+        {
+          "name": "HTML",
+          "icon": "./assets/icons/html-icon.svg"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "./assets/icons/tailwind-icon.svg"
+        },
+        {
+          "name": "Javascript",
+          "icon": "./assets/icons/javascript-icon.svg"
+        }
+      ],
+      "tipo": "Proyecto de Curso",
+      "link": "https://figurasgeometricas-af.netlify.app/",
+      "repository": "https://github.com/AllanDev15/CursoPracticoJavascript-Platzi"
     }
   ],
   "courses": [

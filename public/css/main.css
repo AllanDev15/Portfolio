@@ -1081,13 +1081,13 @@ section {
   color: #cd6799;
 }
 .technical-skills__item:nth-child(4):not(.technical-skills__item--seconday)::after {
-  background-color: #f7df1e;
+  background-color: #ffca26;
 }
 .technical-skills__item:nth-child(4):hover:not(.technical-skills__item--seconday)::after {
   width: 100%;
 }
 .technical-skills__item:nth-child(4) .technical-skills__icon {
-  color: #f7df1e;
+  color: #ffca26;
 }
 .technical-skills__item:nth-child(5):not(.technical-skills__item--seconday)::after {
   background-color: #de4c36;
@@ -1237,9 +1237,12 @@ section {
   transition-duration: 0;
 }
 .project-card:nth-child(4):hover .project-card__img {
-  transition-duration: 3.5s;
+  transition-duration: 0;
 }
 .project-card:nth-child(5):hover .project-card__img {
+  transition-duration: 3.5s;
+}
+.project-card:nth-child(6):hover .project-card__img {
   transition-duration: 3.4s;
 }
 .project-card__info {
@@ -1267,6 +1270,7 @@ section {
 }
 .project-card__technology {
   font-size: 11px;
+  color: #000000;
   font-weight: normal;
   padding: 4px 10px;
   border: 1px solid rgba(38, 39, 40, 0.4);
@@ -1276,6 +1280,30 @@ section {
   .project-card__technology {
     font-size: 12px;
   }
+}
+.project-card .html {
+  background-color: rgba(241, 101, 41, 0.6);
+}
+.project-card .css {
+  background-color: rgba(12, 115, 184, 0.6);
+}
+.project-card .scss {
+  background-color: rgba(205, 103, 153, 0.6);
+}
+.project-card .js {
+  background-color: rgba(255, 202, 38, 0.6);
+}
+.project-card .php {
+  background-color: rgba(114, 118, 172, 0.6);
+}
+.project-card .mysql {
+  background-color: rgba(230, 138, 16, 0.6);
+}
+.project-card .react {
+  background-color: rgba(97, 218, 251, 0.6);
+}
+.project-card .tailwind {
+  background-color: rgba(7, 176, 206, 0.6);
 }
 
 .modal {
@@ -1389,16 +1417,19 @@ section {
     padding: 0px;
   }
 }
-.modal .project__title {
+.modal .project__header {
   margin-bottom: 24px;
 }
-@media (min-width: 768px) {
-  .modal .project__title {
-    margin-bottom: 32px;
-  }
+.modal .project__title {
+  margin-bottom: 16px;
 }
 .modal .project__title.title::after {
   background-color: #008bff;
+}
+.modal .project__type {
+  color: rgba(49, 52, 60, 0.6);
+  border-radius: 6px;
+  font-size: 14px;
 }
 .modal .project__description {
   max-height: 150px;

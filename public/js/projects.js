@@ -5,13 +5,11 @@ const btnLoadMore = document.querySelector('#loadMoreProjects');
 // const btnAllProjects = document.querySelector('#allProjects');
 
 btnLoadMore.addEventListener('click', () => {
-  if (projectsContainer.children.length !== projects.length) {
-    for (let i = 3; i < 6; i++) {
-      showProjectCard(projects[i], true);
-    }
-    // btnLoadMore.remove();
-    // btnAllProjects.style.display = 'flex';
+  for (let i = 3; i < 6; i++) {
+    showProjectCard(projects[i], true);
   }
+  btnLoadMore.parentElement.remove();
+  // btnAllProjects.style.display = 'flex';
 });
 
 function calcPreviewAutoscroll() {
@@ -45,7 +43,8 @@ function showProjectCard(project, isFade) {
 
   project.mainTechnologies.forEach((technology) => {
     const cardTechnology = document.createElement('div');
-    cardTechnology.className = 'project-card__technology';
+    cardTechnology.className = `project-card__technology`;
+    cardTechnology.classList.add(technology.toLowerCase());
     cardTechnology.textContent = technology;
     cardTechnologies.appendChild(cardTechnology);
   });
@@ -93,9 +92,14 @@ function createProjectModal(projectName) {
   projectContent.className = 'project__content';
   const projectInfo = document.createElement('div');
   projectInfo.className = 'project__info';
+  const projectHeader = document.createElement('div');
+  projectHeader.className = 'project__header';
   const projectTitle = document.createElement('h3');
   projectTitle.className = 'project__title title';
   projectTitle.textContent = projectObj.title;
+  const projectType = document.createElement('p');
+  projectType.className = 'project__type';
+  projectType.textContent = projectObj.type;
   const projectDescription = document.createElement('p');
   projectDescription.className = 'project__description principal-text';
   projectDescription.textContent = projectObj.description;
@@ -153,7 +157,9 @@ function createProjectModal(projectName) {
   projectImgContainer.appendChild(projectImg);
   projectContainer.appendChild(projectContent);
   projectContent.appendChild(projectInfo);
-  projectInfo.appendChild(projectTitle);
+  projectInfo.appendChild(projectHeader);
+  projectHeader.appendChild(projectTitle);
+  projectHeader.appendChild(projectType);
   projectInfo.appendChild(projectDescription);
   projectInfo.appendChild(projectTools);
   projectTools.appendChild(p);

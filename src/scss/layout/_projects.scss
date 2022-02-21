@@ -80,7 +80,7 @@
     transition-timing-function: linear;
   }
 
-  @for $item from 1 to 6 {
+  @for $item from 1 to 7 {
     &:nth-child(#{$item}):hover &__img {
       transition-duration: nth(utils.$projectDurations, $item);
     }
@@ -111,6 +111,7 @@
 
   &__technology {
     font-size: 11px;
+    color: utils.$darkInWhite;
     font-weight: normal;
     padding: 4px 10px;
     border: 1px solid rgba(utils.$black, 0.4);
@@ -118,6 +119,40 @@
     @include utils.tablet {
       font-size: 12px;
     }
+  }
+
+  $html: nth(utils.$tech-colors, 1);
+  $css: nth(utils.$tech-colors, 2);
+  $sass: nth(utils.$tech-colors, 3);
+  $js: nth(utils.$tech-colors, 4);
+  $php: nth(utils.$tech-colors, 6);
+  $mysql: nth(utils.$tech-colors, 7);
+  $react: nth(utils.$tech-colors, 8);
+  $tailwind: nth(utils.$tech-colors, 9);
+
+  .html {
+    background-color: rgba($html, 0.6);
+  }
+  .css {
+    background-color: rgba($css, 0.6);
+  }
+  .scss {
+    background-color: rgba($sass, 0.6);
+  }
+  .js {
+    background-color: rgba($js, 0.6);
+  }
+  .php {
+    background-color: rgba($php, 0.6);
+  }
+  .mysql {
+    background-color: rgba($mysql, 0.6);
+  }
+  .react {
+    background-color: rgba($react, 0.6);
+  }
+  .tailwind {
+    background-color: rgba($tailwind, 0.6);
   }
 }
 
@@ -228,16 +263,22 @@
       }
     }
 
-    &__title {
+    &__header {
       margin-bottom: utils.$spaceMd;
+    }
 
-      @include utils.tablet {
-        margin-bottom: utils.$spaceLg;
-      }
+    &__title {
+      margin-bottom: utils.$spaceSm;
     }
     &__title.title::after {
       background-color: utils.$primaryColor-600;
     }
+    &__type {
+      color: rgba(utils.$dark, 0.6);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
     &__description {
       max-height: 150px;
       overflow-y: scroll;
