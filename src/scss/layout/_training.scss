@@ -20,7 +20,6 @@
 
   &__info {
     padding-left: 40px;
-    font-size: 18px;
     position: relative;
 
     @include utils.tablet {
@@ -54,12 +53,23 @@
   }
 
   &__time {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 16px;
+
+    @include utils.tablet {
+      font-size: 20px;
+    }
   }
   &__name {
     margin-bottom: 8px;
+  }
+  &__name,
+  &__school {
+    font-size: 16px;
+    @include utils.tablet {
+      font-size: 18px;
+    }
   }
 
   &::after {
@@ -213,7 +223,8 @@
     .course__technologies {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      row-gap: 16px;
+      column-gap: 24px;
 
       img {
         height: 20px;

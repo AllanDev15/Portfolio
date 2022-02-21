@@ -1523,7 +1523,6 @@ section {
 }
 .education__info {
   padding-left: 40px;
-  font-size: 18px;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -1559,12 +1558,25 @@ section {
   }
 }
 .education__time {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 16px;
 }
+@media (min-width: 768px) {
+  .education__time {
+    font-size: 20px;
+  }
+}
 .education__name {
   margin-bottom: 8px;
+}
+.education__name, .education__school {
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  .education__name, .education__school {
+    font-size: 18px;
+  }
 }
 .education::after {
   content: "";
@@ -1726,7 +1738,8 @@ section {
 .course__learnings .course__technologies {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  row-gap: 16px;
+  column-gap: 24px;
 }
 .course__learnings .course__technologies img {
   height: 20px;
