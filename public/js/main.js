@@ -20,6 +20,75 @@ let projects, courses;
 scrollNavbar();
 window.addEventListener('resize', () => calcPreviewAutoscroll());
 
+// Navbar Intersection
+const navigationList = document.querySelector('.navigation__list');
+const sections = document.querySelectorAll('section');
+const parallax = document.querySelector('.parallax');
+const aboutLink = document.querySelector('.navigation__list li:nth-child(1)');
+const skillsLink = document.querySelector('.navigation__list li:nth-child(2)');
+const projectsLink = document.querySelector('.navigation__list li:nth-child(3)');
+const trainingLink = document.querySelector('.navigation__list li:nth-child(4)');
+const indicator = document.querySelector('.navigation__indicator');
+sections.forEach(setIntersection);
+let linkActive;
+
+// Links click
+navigationList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('navigation__link')) {
+    e.preventDefault();
+
+    const target = document.querySelector(e.target.hash);
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  }
+});
+
+// Intersection Observer
+function navbarIntersection(entries) {
+  entries.forEach((entry) => {
+    linkActive = navigationList.querySelector('li.active');
+
+    if (entry.isIntersecting) {
+      indicator.classList.add('active');
+      if (linkActive) {
+        linkActive.classList.remove('active');
+      }
+      const element = entry.target;
+
+      if (element.classList.contains('about')) {
+        aboutLink.classList.add('active');
+      } else if (element.classList.contains('technical-skills')) {
+        skillsLink.classList.add('active');
+      } else if (element.classList.contains('projects')) {
+        projectsLink.classList.add('active');
+      } else if (element.classList.contains('training')) {
+        trainingLink.classList.add('active');
+      }
+    }
+  });
+}
+
+function setIntersection(target) {
+  let observer;
+  if (target.id === 'training') {
+    observer = new IntersectionObserver(navbarIntersection, { threshold: [0.7, 0.8, 0.9, 1] });
+  } else {
+    observer = new IntersectionObserver(navbarIntersection, { threshold: [0.9, 1] });
+  }
+  observer.observe(target);
+}
+
+parallax.addEventListener('scroll', () => {
+  if (parallax.scrollTop <= parallax.offsetHeight / 2) {
+    if (linkActive) {
+      linkActive.classList.remove('active');
+    }
+    indicator.classList.remove('active');
+  }
+});
+
 // Interests
 const interestList = document.querySelector('.interests__list');
 interestList.addEventListener('mouseover', (e) => {

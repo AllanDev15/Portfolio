@@ -87,9 +87,45 @@
       display: flex;
       align-items: center;
       gap: 2.5rem;
+      position: relative;
+
+      li.active .navigation__link {
+        color: utils.$dark;
+      }
+      li:hover ~ .navigation__indicator {
+        opacity: 1;
+      }
+
+      $indicatorWidths: 104px, 95px, 79px, 86px;
+      $indicatorLeft: 0px, 144px, 279px, 398px;
+
+      @for $item from 1 to 5 {
+        li:nth-child(#{$item}):hover ~ .navigation__indicator {
+          width: nth($indicatorWidths, $item);
+          left: nth($indicatorLeft, $item);
+        }
+        li:nth-child(#{$item}).active ~ .navigation__indicator {
+          width: nth($indicatorWidths, $item) !important;
+          left: nth($indicatorLeft, $item) !important;
+        }
+      }
     }
-    &__link:hover {
-      text-decoration: underline;
+
+    &__indicator {
+      position: absolute;
+      bottom: -4px;
+      margin: auto;
+      left: 0;
+      width: 0px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: utils.$primaryColor-500;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    &__indicator.active {
+      opacity: 1;
     }
   }
 
@@ -161,6 +197,7 @@
   perspective: 4px;
   height: calc(100vh - 63px);
   position: relative;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     display: none;
@@ -203,7 +240,7 @@
 
   &__title {
     margin-bottom: 2rem;
-    color: utils.$primaryColor-600;
+    color: utils.$primaryColor-400;
   }
   &__description {
     font-size: 1.3333rem;
@@ -232,12 +269,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include utils.tablet {
-      flex-basis: 60%;
-    }
-    @include utils.desktop {
-      flex-basis: 50%;
-    }
+    gap: 64px;
   }
   &__link {
     display: flex;

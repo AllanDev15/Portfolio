@@ -22,31 +22,24 @@
   </div>
   <div class="navbar">
     <div class="container navbar__content">
-      <h2 class="navbar__logo"> <a class="navbar__title" href="#">Allan Flores</a></h2>
+      <h2 class="navbar__logo"> <a class="navbar__title" href="#top">Allan Flores</a></h2>
       <nav class="navigation">
         <ul class="navigation__list">
-          <li><a class="navigation__link whiteLink" href="#">Sobre Mi</a></li>
-          <li><a class="navigation__link whiteLink" href="#">Habilidades</a></li>
-          <li><a class="navigation__link whiteLink" href="#">Proyectos</a></li>
-          <li><a class="navigation__link whiteLink" href="#">Formación</a></li>
-          <li><a class="navigation__link whiteLink" href="#">
-              <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 512 512">
-                <path
-                  d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792c7.068-8.708-.639-21.43-11.562-19.35c-124.203 23.654-238.262-71.576-238.262-196.954c0-72.222 38.662-138.635 101.498-174.394c9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256c0 141.309 114.511 256 256 256z" />
-              </svg>
-            </a></li>
+          <li><a class="navigation__link whiteLink" href="#about">Acerca de Mi</a></li>
+          <li><a class="navigation__link whiteLink" href="#skills">Habilidades</a></li>
+          <li><a class="navigation__link whiteLink" href="#projects">Proyectos</a></li>
+          <li><a class="navigation__link whiteLink" href="#training">Formación</a></li>
+          <span class="navigation__indicator"></span>
         </ul>
       </nav>
     </div>
   </div>
 
   <div class="parallax">
-    <div class="hero">
+    <div id="top" class="hero">
       <div class="navbar navbar--mobile">
         <div class="container navbar__content">
-          <h2 class="navbar__logo"> <a class="navbar__text" href="#">Allan Flores</a></h2>
+          <h2 class="navbar__logo"> <a class="navbar__text" href="index.html">Allan Flores</a></h2>
           <div class="social-media--mobile">
             <a class="whiteLink" href="#">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -70,15 +63,14 @@
         <div class="header">
           <h1 class="header__title">Frontend Developer</h1>
           <div class="header__description">
-            <p>Soy un desarrollador apasionado, buscando comenzar mi camino profesional</p>
-            <p>Aprendo fácilmente y disfruto programar</p>
+            <p>Soy un desarrollador web apasionado por la programación y el desarrollo frontend</p>
           </div>
         </div>
       </header>
 
       <div class="contact container">
         <div class="contact__social-media">
-          <a class="whiteLink" href="#">
+          <a class="whiteLink" href="https://www.linkedin.com/in/allanfl15/" target="_blank" rel="noopener noreferrer">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               aria-hidden="true" role="img" width="0.88em" height="1em" preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 448 512">
@@ -86,7 +78,7 @@
                 d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5c0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7c-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5c67.2 0 79.7 44.3 79.7 101.9V416z" />
             </svg>
           </a>
-          <a class="whiteLink" href="https://www.github.com/AllanDev15" target="_blank">
+          <a class="whiteLink" href="https://www.github.com/AllanDev15" target="_blank" rel="noopener noreferrer">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               aria-hidden="true" role="img" width="0.97em" height="1em" preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 496 512">
@@ -96,39 +88,30 @@
           </a>
         </div>
         <div class="contact__info">
-          <a class="contact__link whiteLink" href="#">
+          <p class="contact__link whiteLink">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               aria-hidden="true" role="img" width="0.75em" height="1em" preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 384 512">
               <path
                 d="M172.268 501.67C26.97 291.031 0 269.413 0 192C0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67c-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80s-80 35.817-80 80s35.817 80 80 80z" />
             </svg>
-            <p>México, CDMX</p>
-          </a>
-          <a class="contact__link whiteLink" href="#">
+            México, CDMX
+          </p>
+          <a class="contact__link whiteLink" href="mailto:allan.fl.15@live.com">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 512 512">
               <path
                 d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7c22.4 17.4 52.1 39.5 154.1 113.6c21.1 15.4 56.7 47.8 92.2 47.6c35.7.3 72-32.8 92.3-47.6c102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4c132.7-96.3 142.8-104.7 173.4-128.7c5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9c30.6 23.9 40.7 32.4 173.4 128.7c16.8 12.2 50.2 41.8 73.4 41.4z" />
             </svg>
-            <p>Allan.FL.15@live.com</p>
-          </a>
-          <a class="contact__link whiteLink" href="#">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              aria-hidden="true" role="img" width="0.88em" height="1em" preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 448 512">
-              <path
-                d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9l-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9l190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284L16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z" />
-            </svg>
-            <p>AllanDev15</p>
+            Allan.FL.15@live.com
           </a>
         </div>
       </div>
     </div>
 
     <main class="main">
-      <section class="about">
+      <section id="about" class="about">
         <div class="about__content container">
           <div class="about__description">
             <h2 class="about__title title">Acerca de Mi</h2>
@@ -214,7 +197,7 @@
         </div>
       </section>
 
-      <section class="technical-skills">
+      <section id="skills" class="technical-skills">
         <div class="technical-skills__container container">
           <div class="technical-skills__content">
             <h2 class="technical-skills__title title">Habilidades Técnicas</h2>
@@ -288,7 +271,7 @@
         </div>
       </section>
 
-      <section class="projects">
+      <section id="projects" class="projects">
         <div class="container">
           <h2 class="projects__title title">Proyectos</h2>
           <div class="projects__content"></div>
@@ -299,7 +282,7 @@
         </div>
       </section>
 
-      <section class="training container">
+      <section id="training" class="training container">
         <h2 class="title">Formación</h2>
         <div class="education">
           <div class="education__info">

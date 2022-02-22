@@ -612,9 +612,61 @@ section {
   display: flex;
   align-items: center;
   gap: 2.5rem;
+  position: relative;
 }
-.navbar .navigation__link:hover {
-  text-decoration: underline;
+.navbar .navigation__list li.active .navigation__link {
+  color: #31343c;
+}
+.navbar .navigation__list li:hover ~ .navigation__indicator {
+  opacity: 1;
+}
+.navbar .navigation__list li:nth-child(1):hover ~ .navigation__indicator {
+  width: 104px;
+  left: 0px;
+}
+.navbar .navigation__list li:nth-child(1).active ~ .navigation__indicator {
+  width: 104px !important;
+  left: 0px !important;
+}
+.navbar .navigation__list li:nth-child(2):hover ~ .navigation__indicator {
+  width: 95px;
+  left: 144px;
+}
+.navbar .navigation__list li:nth-child(2).active ~ .navigation__indicator {
+  width: 95px !important;
+  left: 144px !important;
+}
+.navbar .navigation__list li:nth-child(3):hover ~ .navigation__indicator {
+  width: 79px;
+  left: 279px;
+}
+.navbar .navigation__list li:nth-child(3).active ~ .navigation__indicator {
+  width: 79px !important;
+  left: 279px !important;
+}
+.navbar .navigation__list li:nth-child(4):hover ~ .navigation__indicator {
+  width: 86px;
+  left: 398px;
+}
+.navbar .navigation__list li:nth-child(4).active ~ .navigation__indicator {
+  width: 86px !important;
+  left: 398px !important;
+}
+.navbar .navigation__indicator {
+  position: absolute;
+  bottom: -4px;
+  margin: auto;
+  left: 0;
+  width: 0px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #009aff;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.navbar .navigation__indicator.active {
+  opacity: 1;
 }
 .navbar.navbar--mobile {
   display: block;
@@ -682,6 +734,7 @@ section {
   perspective: 4px;
   height: calc(100vh - 63px);
   position: relative;
+  scroll-behavior: smooth;
 }
 .parallax::-webkit-scrollbar {
   display: none;
@@ -722,7 +775,7 @@ section {
 }
 .header__title {
   margin-bottom: 2rem;
-  color: #008bff;
+  color: #07aaff;
 }
 .header__description {
   font-size: 1.3333rem;
@@ -754,16 +807,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-@media (min-width: 768px) {
-  .contact__info {
-    flex-basis: 60%;
-  }
-}
-@media (min-width: 1024px) {
-  .contact__info {
-    flex-basis: 50%;
-  }
+  gap: 64px;
 }
 .contact__link {
   display: flex;
