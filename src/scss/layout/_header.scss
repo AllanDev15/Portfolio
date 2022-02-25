@@ -45,17 +45,16 @@
   $self: &;
   width: 100%;
   position: fixed;
-  top: 0px;
+  bottom: 0px;
   backdrop-filter: blur(4px);
   z-index: 5;
-  border-bottom: 1px solid rgba(utils.$color__white, 0.25);
-  display: none;
+  border: none;
   transition: all 0.3s ease;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
 
   &__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 24px 0px;
     transition: inherit;
@@ -64,6 +63,7 @@
   &__title {
     color: utils.$color__white;
     transition: inherit;
+    display: none;
   }
 
   .navigation__link {
@@ -102,37 +102,74 @@
   }
 
   @include utils.tablet {
-    display: block;
+    border-bottom: 1px solid rgba(utils.$color__white, 0.25);
+    bottom: unset;
+    top: 0px;
+
+    &__content {
+      justify-content: space-between;
+    }
+
+    &__title {
+      display: block;
+    }
   }
 
   // Navigation
   .navigation {
+    width: 100%;
     &__list {
       display: flex;
       align-items: center;
-      gap: 2.5rem;
+      justify-content: space-between;
       position: relative;
 
-      li.active .navigation__link {
-        color: var(--colorText);
+      li {
+        position: relative;
+        &.active .navigation__link,
+        &:hover .navigation__link {
+          color: var(--colorText);
+        }
       }
+
+      li::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0px;
+        right: 0px;
+        width: 0px;
+        margin: 0 auto;
+        height: 3px;
+        border-radius: 2px;
+        background-color: var(--colorPrimary);
+        pointer-events: none;
+        transition: width 0.4s ease;
+      }
+
       li:hover ~ .navigation__indicator {
         opacity: 1;
       }
 
-      $indicatorWidths: 104px, 95px, 79px, 86px;
-      $indicatorLeft: 0px, 144px, 279px, 398px;
+      $indicatorWidths: 51px, 71px, 59px, 64px;
 
       @for $item from 1 to 5 {
-        li:nth-child(#{$item}):hover ~ .navigation__indicator {
+        li:nth-child(#{$item}).active:after {
           width: nth($indicatorWidths, $item);
-          left: nth($indicatorLeft, $item);
-        }
-        li:nth-child(#{$item}).active ~ .navigation__indicator {
-          width: nth($indicatorWidths, $item) !important;
-          left: nth($indicatorLeft, $item) !important;
         }
       }
+
+      .icon {
+        font-size: 18px;
+        @include utils.tablet {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__link {
+      padding: 8px 0px;
+      transition: color 0.2s ease;
     }
 
     &__change-theme {
@@ -159,9 +196,45 @@
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s ease;
+
+      &.active {
+        opacity: 1;
+      }
     }
-    &__indicator.active {
-      opacity: 1;
+
+    @include utils.mobile {
+      &__list {
+        gap: 32px;
+      }
+    }
+    @include utils.tablet {
+      width: unset;
+      justify-content: unset;
+
+      &__list {
+        gap: 40px;
+
+        li {
+          position: unset;
+          &::after {
+            display: none;
+          }
+        }
+
+        $indicatorWidths: 68px, 95px, 80px, 86px;
+        $indicatorLeft: 0px, 108px, 243px, 362px;
+
+        @for $item from 1 to 5 {
+          li:nth-child(#{$item}):hover ~ .navigation__indicator {
+            width: nth($indicatorWidths, $item);
+            left: nth($indicatorLeft, $item);
+          }
+          li:nth-child(#{$item}).active ~ .navigation__indicator {
+            width: nth($indicatorWidths, $item) !important;
+            left: nth($indicatorLeft, $item) !important;
+          }
+        }
+      }
     }
   }
 
@@ -189,40 +262,16 @@
       display: flex;
       align-items: center;
       gap: 2.5rem;
-    }
-  }
-}
 
-// Navigation Mobile
-.navigation-mobile {
-  display: block;
-  position: sticky;
-  bottom: 0px;
-  left: 0px;
-  background-color: var(--colorNavbar);
-  padding: 9px 0px 7px 0px;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
+      .icon {
+        color: inherit;
+        font-size: 24px;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--colorIcon);
-    .icon {
-      font-size: 18px;
+        @include utils.tablet {
+          font-size: 20px;
+        }
+      }
     }
-  }
-  &__text {
-    font-size: 10px;
-  }
-  @include utils.tablet {
-    display: none;
   }
 }
 
@@ -231,7 +280,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 4px;
-  height: calc(100vh - 57px);
+  height: calc(100vh - 51px);
   position: relative;
   scroll-behavior: smooth;
 
@@ -257,7 +306,7 @@
   flex-direction: column;
   justify-content: space-between;
   color: white;
-  height: calc(100vh - 57px);
+  height: calc(100vh - 66px);
 
   @include utils.tablet {
     background: linear-gradient(to right, #0d0d0d 30%, transparent);

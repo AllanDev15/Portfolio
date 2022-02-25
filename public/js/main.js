@@ -79,8 +79,20 @@ const skillsLink = document.querySelector('.navigation__list li:nth-child(2)');
 const projectsLink = document.querySelector('.navigation__list li:nth-child(3)');
 const trainingLink = document.querySelector('.navigation__list li:nth-child(4)');
 const indicator = document.querySelector('.navigation__indicator');
+let windowWidth,
+  thresholdTraining,
+  thresholds,
+  linkActive,
+  scrollBlock = 'center';
+
+windowWidth = window.innerWidth;
+if (windowWidth < 768) {
+  thresholdTraining = [0.5, 0.6, 0.7, 0.8, 0.9, 1];
+  thresholds = [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
+  scrollBlock = 'start';
+}
+
 sections.forEach(setIntersection);
-let linkActive;
 
 // Links click
 navigationList.addEventListener('click', (e) => {
@@ -90,7 +102,7 @@ navigationList.addEventListener('click', (e) => {
     const target = document.querySelector(e.target.hash);
     target.scrollIntoView({
       behavior: 'smooth',
-      block: 'center',
+      block: scrollBlock,
     });
   }
 });
@@ -123,13 +135,11 @@ function setIntersection(target) {
   let observer;
   if (target.id === 'training') {
     observer = new IntersectionObserver(navbarIntersection, {
-      root: parallax,
-      threshold: [0.7, 0.8, 0.9, 1],
+      threshold: thresholdTraining ? thresholdTraining : [0.7, 0.8, 0.9, 1],
     });
   } else {
     observer = new IntersectionObserver(navbarIntersection, {
-      root: parallax,
-      threshold: [0.9, 1],
+      threshold: thresholds ? thresholds : [0.9, 1],
     });
   }
   observer.observe(target);
@@ -214,7 +224,6 @@ modal.addEventListener('click', (e) => {
 function scrollNavbar() {
   const navbar = document.querySelector('.navbar');
   const navbarHeight = navbar.offsetHeight;
-  const navigationLinks = navbar.querySelectorAll('.whiteLink');
   const parallax = document.querySelector('.parallax');
 
   parallax.addEventListener('scroll', () => {
