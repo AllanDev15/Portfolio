@@ -2,7 +2,7 @@
 
 .projects {
   &__title.title::after {
-    background-color: utils.$primaryColor-600;
+    background-color: var(--colorPrimary);
   }
 
   &__content {
@@ -46,14 +46,13 @@
     opacity: 0;
   }
   opacity: 1;
-  background-color: utils.$whiteInDark;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
   border-radius: 12px;
-  transition: box-shadow ease 0.3s, transform 0.2s ease, opacity 0.4s ease;
+  transition: box-shadow ease 0.2s, transform 0.2s ease, opacity 0.4s ease;
   $self: &;
 
   &:hover {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 17px rgba(var(--colorShadow), 0.14),
+      0 5px 22px rgba(var(--colorShadow), 0.12), 0 7px 8px rgba(var(--colorShadow), 0.2);
     cursor: pointer;
 
     @include utils.desktop {
@@ -88,7 +87,6 @@
 
   &__info {
     padding: 20px 24px;
-    background-color: utils.$whiteInDark;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     font-size: 18px;
@@ -111,10 +109,10 @@
 
   &__technology {
     font-size: 11px;
-    color: utils.$darkInWhite;
+    color: utils.$color__black;
     font-weight: normal;
     padding: 4px 10px;
-    border: 1px solid rgba(utils.$black, 0.4);
+    border: 1px solid rgba(utils.$color__darker, 0.3);
     border-radius: 8px;
     @include utils.tablet {
       font-size: 12px;
@@ -131,29 +129,33 @@
   $tailwind: nth(utils.$tech-colors, 9);
 
   .html {
-    background-color: rgba($html, 0.6);
+    background-color: rgba($html, var(--colorsOpacity));
   }
   .css {
-    background-color: rgba($css, 0.6);
+    background-color: rgba($css, var(--colorsOpacity));
   }
   .scss {
-    background-color: rgba($sass, 0.6);
+    background-color: rgba($sass, var(--colorsOpacity));
   }
   .js {
-    background-color: rgba($js, 0.6);
+    background-color: rgba($js, var(--colorsOpacity));
   }
   .php {
-    background-color: rgba($php, 0.6);
+    background-color: rgba($php, var(--colorsOpacity));
   }
   .mysql {
-    background-color: rgba($mysql, 0.6);
+    background-color: rgba($mysql, var(--colorsOpacity));
   }
   .react {
-    background-color: rgba($react, 0.6);
+    background-color: rgba($react, var(--colorsOpacity));
   }
   .tailwind {
-    background-color: rgba($tailwind, 0.6);
+    background-color: rgba($tailwind, var(--colorsOpacity));
   }
+}
+
+.theme--dark .modal .close-modal {
+  background-color: rgba(utils.$color__card, 0.6);
 }
 
 .modal {
@@ -161,7 +163,7 @@
   inset: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(utils.$dark, 0.75);
+  background-color: rgba(utils.$color__darker, 0.75);
   opacity: 0;
   pointer-events: none;
   z-index: 6;
@@ -177,8 +179,8 @@
     position: absolute;
     top: 1px;
     right: 1px;
-    background-color: rgba(utils.$white, 0.8);
-    border-radius: 10px;
+    background-color: rgba(utils.$color__white, 0.6);
+    border-radius: 12px;
     border: none;
     padding: 4px 6px;
     display: flex;
@@ -187,6 +189,7 @@
     @include utils.tablet {
       margin: 8px 8px 0 0;
       padding: 8px;
+      background-color: unset;
     }
     .icon {
       pointer-events: none;
@@ -201,7 +204,7 @@
     transform: translate(-50%, -50%);
     height: 650px;
     max-height: 90%;
-    background-color: utils.$white;
+    background-color: var(--colorCard);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -271,10 +274,10 @@
       margin-bottom: utils.$spaceSm;
     }
     &__title.title::after {
-      background-color: utils.$primaryColor-600;
+      background-color: var(--colorPrimary);
     }
     &__type {
-      color: rgba(utils.$dark, 0.6);
+      color: var(--colorSubText);
       border-radius: 6px;
       font-size: 14px;
     }
@@ -321,6 +324,9 @@
         & .icon {
           height: 25px;
         }
+        .theme--dark & .icon {
+          filter: invert(1) brightness(1.4);
+        }
       }
     }
 
@@ -341,7 +347,7 @@
         padding-top: 0px;
         padding-bottom: 0px;
         background-color: #292f34;
-        color: utils.$whiteInDark;
+        color: utils.$color__white;
         flex-basis: 20%;
         @include utils.tablet {
           flex-basis: unset;

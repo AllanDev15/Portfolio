@@ -175,31 +175,31 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "./assets/icons/html-icon.svg"
+          "icon": "./assets/icons/html-color-icon.svg"
         },
         {
           "name": "CSS",
-          "icon": "./assets/icons/css-icon.svg"
+          "icon": "./assets/icons/css-color-icon.svg"
         },
         {
           "name": "SASS",
-          "icon": "./assets/icons/sass-icon.svg"
+          "icon": "./assets/icons/sass-color-icon.svg"
         },
         {
           "name": "JS",
-          "icon": "./assets/icons/javascript-icon.svg"
+          "icon": "./assets/icons/javascript-color-icon.svg"
         },
         {
           "name": "JQuery",
-          "icon": "./assets/icons/jquery-icon.svg"
+          "icon": "./assets/icons/jquery-color-icon.svg"
         },
         {
           "name": "PHP",
-          "icon": "./assets/icons/php-icon.svg"
+          "icon": "./assets/icons/php-color-icon.svg"
         },
         {
           "name": "MySQL",
-          "icon": "./assets/icons/mysql-icon.svg"
+          "icon": "./assets/icons/mysql-color-icon.svg"
         }
       ]
     },
@@ -212,11 +212,11 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "./assets/icons/html-icon.svg"
+          "icon": "./assets/icons/html-color-icon.svg"
         },
         {
           "name": "CSS",
-          "icon": "./assets/icons/css-icon.svg"
+          "icon": "./assets/icons/css-color-icon.svg"
         }
       ]
     },
@@ -229,11 +229,11 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "./assets/icons/html-icon.svg"
+          "icon": "./assets/icons/html-color-icon.svg"
         },
         {
           "name": "CSS",
-          "icon": "./assets/icons/css-icon.svg"
+          "icon": "./assets/icons/css-color-icon.svg"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "technologies": [
         {
           "name": "Javascript",
-          "icon": "./assets/icons/javascript-icon.svg"
+          "icon": "./assets/icons/javascript-color-icon.svg"
         }
       ]
     },
@@ -259,7 +259,7 @@
       "technologies": [
         {
           "name": "Javascript",
-          "icon": "./assets/icons/javascript-icon.svg"
+          "icon": "./assets/icons/javascript-color-icon.svg"
         }
       ]
     },
@@ -272,7 +272,7 @@
       "technologies": [
         {
           "name": "Javascript",
-          "icon": "./assets/icons/javascript-icon.svg"
+          "icon": "./assets/icons/javascript-color-icon.svg"
         }
       ]
     },
@@ -285,7 +285,7 @@
       "technologies": [
         {
           "name": "Javascript",
-          "icon": "./assets/icons/javascript-icon.svg"
+          "icon": "./assets/icons/javascript-color-icon.svg"
         }
       ]
     },
@@ -298,7 +298,7 @@
       "technologies": [
         {
           "name": "Javascript",
-          "icon": "./assets/icons/javascript-icon.svg"
+          "icon": "./assets/icons/javascript-color-icon.svg"
         }
       ]
     },

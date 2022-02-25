@@ -39,7 +39,7 @@ export function showCourses(course, isFade) {
   coursePlatform.className = 'course__platform';
   coursePlatform.innerHTML = `
   <p>${course.platform}</p>
-  <svg class="logo" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="0.63em"
+  <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="0.63em"
     height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 320 512">
     <path fill="currentColor"
       d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4l96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
@@ -64,6 +64,7 @@ export function showCourses(course, isFade) {
       tech.className = 'course__technology';
 
       const techIcon = document.createElement('img');
+      techIcon.className = 'icon';
       techIcon.src = technologie.icon;
       tech.appendChild(techIcon);
 

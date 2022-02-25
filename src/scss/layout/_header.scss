@@ -3,13 +3,13 @@
 .loader {
   position: absolute;
   inset: 0;
-  background-color: utils.$dark;
+  background-color: utils.$color__dark;
   z-index: 10;
   opacity: 1;
   transition: opacity 0.4s ease-in;
 
   &__container {
-    color: white;
+    color: utils.$color__white;
     position: relative;
     height: 100%;
   }
@@ -48,7 +48,7 @@
   top: 0px;
   backdrop-filter: blur(4px);
   z-index: 5;
-  border-bottom: 1px solid rgba(utils.$white, 0.25);
+  border-bottom: 1px solid rgba(utils.$color__white, 0.25);
   display: none;
   transition: all 0.3s ease;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
@@ -62,21 +62,45 @@
   }
 
   &__title {
-    color: utils.$white;
+    color: utils.$color__white;
     transition: inherit;
   }
 
-  &.navbar--scroll {
-    background-color: utils.$white;
+  .navigation__link {
+    color: rgba(utils.$color__white, 0.6);
+  }
 
+  &.navbar--scroll {
+    background-color: var(--colorNavbar);
+    border-bottom: 1px solid rgba(utils.$color__white, 0.5);
     #{$self}__content {
       padding: 16px 0px;
     }
     #{$self}__title {
-      color: utils.$black;
-      fill: utils.$black;
+      color: utils.$color__black;
+    }
+
+    .navigation__link {
+      color: rgba(utils.$color__dark, 0.6);
+      &:hover {
+        color: utils.$color__black;
+      }
+    }
+
+    .theme--dark & {
+      border-bottom: 1px solid rgba(utils.$color__dark, 0.5);
+      #{$self}__title {
+        color: utils.$color__white;
+      }
+      .navigation__link {
+        color: rgba(utils.$color__white, 0.6);
+        &:hover {
+          color: utils.$color__white;
+        }
+      }
     }
   }
+
   @include utils.tablet {
     display: block;
   }
@@ -90,7 +114,7 @@
       position: relative;
 
       li.active .navigation__link {
-        color: utils.$dark;
+        color: var(--colorText);
       }
       li:hover ~ .navigation__indicator {
         opacity: 1;
@@ -111,6 +135,18 @@
       }
     }
 
+    &__change-theme {
+      cursor: pointer;
+      display: flex;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      .icon {
+        color: inherit;
+      }
+    }
+
     &__indicator {
       position: absolute;
       bottom: -4px;
@@ -119,7 +155,7 @@
       width: 0px;
       height: 3px;
       border-radius: 2px;
-      background-color: utils.$primaryColor-500;
+      background-color: var(--colorPrimary);
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s ease;
@@ -134,7 +170,7 @@
     display: block;
     position: relative;
     backdrop-filter: blur(4px);
-    border-bottom: 1px solid rgba(utils.$white, 0.25);
+    border-bottom: 1px solid rgba(utils.$color__white, 0.25);
 
     #{$self}__content {
       display: flex;
@@ -143,7 +179,7 @@
       padding: 16px 0px;
     }
     #{$self}__text {
-      color: utils.$white;
+      color: utils.$color__white;
     }
     @include utils.tablet {
       opacity: 0;
@@ -163,7 +199,7 @@
   position: sticky;
   bottom: 0px;
   left: 0px;
-  background-color: utils.$white;
+  background-color: var(--colorNavbar);
   padding: 9px 0px 7px 0px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
 
@@ -177,9 +213,9 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    fill: utils.$dark;
+    color: var(--colorIcon);
     .icon {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
   &__text {
@@ -195,7 +231,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 4px;
-  height: calc(100vh - 63px);
+  height: calc(100vh - 57px);
   position: relative;
   scroll-behavior: smooth;
 
@@ -221,7 +257,7 @@
   flex-direction: column;
   justify-content: space-between;
   color: white;
-  height: calc(100vh - 63px);
+  height: calc(100vh - 57px);
 
   @include utils.tablet {
     background: linear-gradient(to right, #0d0d0d 30%, transparent);
@@ -240,10 +276,11 @@
 
   &__title {
     margin-bottom: 2rem;
-    color: utils.$primaryColor-400;
+    color: var(--colorPrimary);
   }
   &__description {
     font-size: 1.3333rem;
+    color: utils.$color__white;
   }
   @include utils.tablet {
     width: 60%;
@@ -254,7 +291,6 @@
 .contact {
   padding: 8px 0px;
   &__social-media {
-    fill: rgba(utils.$white, 0.5);
     align-items: center;
     gap: 32px;
     display: none;

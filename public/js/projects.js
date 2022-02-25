@@ -22,7 +22,7 @@ function calcPreviewAutoscroll() {
 
 function showProjectCard(project, isFade) {
   const projectCard = document.createElement('div');
-  projectCard.className = 'project-card';
+  projectCard.className = 'project-card card';
   projectCard.dataset.project = project.name;
 
   const cardPreview = document.createElement('div');

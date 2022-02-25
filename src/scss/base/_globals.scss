@@ -21,14 +21,15 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: utils.$black;
-  background-color: utils.$white;
+  color: var(--colorText);
+  background-color: var(--colorBackground);
   font-family: utils.$textFont;
 }
 p {
   line-height: 1.5;
   margin: 0px;
   cursor: default;
+  color: var(--colorText);
 }
 ul {
   padding: 0px;
@@ -39,7 +40,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: utils.$black;
+  color: var(--colorText);
 }
 h1,
 h2,
@@ -47,6 +48,7 @@ h3,
 h4 {
   font-family: utils.$titleFont;
   margin: 0px;
+  color: var(--colorText);
 }
 h1 {
   font-size: 2.625rem;
@@ -59,10 +61,18 @@ h3 {
 }
 section {
   padding: 4.5rem 0px;
+  background-color: var(--colorBackground);
+}
+
+.color-transition *,
+.color-transition *::after,
+.color-transition *::before {
+  transition: all 0.5s ease !important;
 }
 
 .icon {
   font-size: 24px;
+  color: var(--colorIcon);
 }
 @media (min-width: 768px) {
   .icon {
@@ -72,7 +82,7 @@ section {
 
 .main {
   height: 100vh;
-  background-color: utils.$white;
+  background-color: var(--colorBackground);
 }
 
 .container {
@@ -85,35 +95,42 @@ section {
     width: 95%;
   }
 }
+.card {
+  background-color: var(--colorCard);
+  color: var(--colorCardText);
+  box-shadow: 0 4px 5px rgba(var(--colorShadow), 0.14), 0 1px 10px rgba(var(--colorShadow), 0.12),
+    0 2px 4px rgba(var(--colorShadow), 0.2);
+}
 
 .link,
 .link:link,
 .link:visited {
-  color: utils.$primaryColor-700;
+  color: var(--colorPrimary);
   &:hover {
     text-decoration: underline;
   }
 }
 .whiteLink {
-  color: rgba(utils.$white, 0.5);
-  fill: rgba(utils.$white, 0.5);
+  color: rgba(utils.$color__white, 0.6);
+  fill: rgba(utils.$color__white, 0.6);
   transition: all 0.1s ease-out;
 
   &:hover {
-    color: utils.$white;
-    fill: utils.$white;
+    color: utils.$color__white;
+    fill: utils.$color__white;
   }
 }
 .blackLink {
-  color: rgba(utils.$black, 0.5);
-  fill: rgba(utils.$black, 0.5);
+  color: rgba(utils.$color__black, 0.6);
+  fill: rgba(utils.$color__black, 0.6);
   transition: all 0.1s ease-out;
 
   &:hover {
-    color: utils.$black;
-    fill: utils.$black;
+    color: utils.$color__black;
+    fill: utils.$color__black;
   }
 }
+
 .title {
   margin-bottom: utils.$spaceXL;
   position: relative;
@@ -151,17 +168,20 @@ section {
   justify-content: center;
   border-radius: 6px;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 1px rgba(var(--colorShadow), 0.14), 0 2px 1px rgba(var(--colorShadow), 0.12),
+    0 1px 3px rgba(var(--colorShadow), 0.2);
   @include utils.tablet {
     font-size: 16px;
   }
 
   &--primary {
     min-width: 120px;
-    background-color: utils.$secondaryColor-400;
-    border: 1px solid #cc8500;
-    color: #000000;
+    background-color: var(--colorSecondary);
+    border: 1px solid #fc8a00;
+    color: utils.$color__black;
     &:hover {
-      background-color: utils.$secondaryColor-500;
+      cursor: pointer;
+      background-color: var(--colorSecondaryDarker);
     }
   }
 
@@ -172,6 +192,7 @@ section {
   &--icon {
     padding: 8px 14px;
     .icon {
+      color: utils.$color__white;
       font-size: 28px;
     }
   }

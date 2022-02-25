@@ -1,32 +1,20 @@
-$primaryColor-900: #2441d1;
-$primaryColor-800: #1465f0; //Light
-$primaryColor-700: #0077ff;
-$primaryColor-600: #008bff;
-$primaryColor-500: #009aff;
-$primaryColor-400: #07aaff;
-$primaryColor-300: #51bbff; //Dark
-$primaryColor-200: #8bceff;
-$primaryColor-100: #bae1ff;
-$primaryColor-50: #e2f3ff;
+$color__primary: #008bff;
+$color__primary--darker: #0077ff;
+$color__secondary: #ffa600;
+$color__secondary--darker: #ff9600;
+$color__light: #f6f5f6;
+$color__white: #ffffff;
+$color__white--rgb: 255, 255, 255;
+$color__dark: #31343c;
+$color__darker: #262728;
+$color__black: #000000;
+$color__black--rgb: 0, 0, 0;
 
-$secondaryColor-900: #e94b00;
-$secondaryColor-800: #f26800;
-$secondaryColor-700: #f77900;
-$secondaryColor-600: #fc8a00;
-$secondaryColor-500: #ff9600;
-$secondaryColor-400: #ffa600; //Light
-$secondaryColor-300: #ffb640; //Dark
-$secondaryColor-200: #ffcb78;
-$secondaryColor-100: #ffe0ae;
-$secondaryColor-50: #fff3de;
-
-$white: #f6f5f6;
-$whiteInDark: #ffffff;
-$black: #262728;
-$dark: #31343c;
-$darkInWhite: #000000;
-
-$darkRGB: 49, 52, 60;
+$color__primary--dark: #07aaff;
+$color__primary--dark--darker: #009aff;
+$color__secondary--dark: #ffb640;
+$color__secondary--dark--darker: #ffa600;
+$color__card : #43454d;
 
 $titleFont: 'Oxygen', sans-serif;
 $textFont: 'Poppins', sans-serif;
@@ -43,3 +31,40 @@ $desktop: 1024px;
 
 $tech-colors: #f16529, #0c73b8, #cd6799, #ffca26, #de4c36, #7276ac, #e68a10, #61dafb, #07b0ce;
 $projectDurations: 0, 10s, 0, 0, 3.5s, 3.4s;
+
+.theme--light {
+  --colorPrimary: #{$color__primary};
+  --colorPrimaryDarker: #{$color__primary--darker};
+  --colorSecondary: #{$color__secondary};
+  --colorSecondaryDarker: #{$color__secondary--darker};
+  --colorBackground: #{$color__light};
+  --colorNavbar: #{$color__light};
+  --colorText: #{$color__black};
+  --colorSubText: #{rgba($color__black, 0.6)};
+  --colorBorder: #{rgba($color__darker, 0.3)};
+  --colorCard: #{$color__white};
+  --colorCardText: #{$color__darker};
+  --colorBackgroundSkills: #{$color__dark};
+  --colorIcon: #{$color__dark};
+  --colorsOpacity: 0.6;
+  --colorFooter: ${$color__dark};
+  --colorShadow: 49, 52, 60;
+}
+
+.theme--dark {
+  --colorPrimary: #{$color__primary--dark};
+  --colorPrimaryDarker: #{$color__primary--dark--darker};
+  --colorSecondary: #{$color__secondary--dark};
+  --colorSecondaryDarker: #{$color__secondary--dark--darker};
+  --colorBackground: #{$color__dark};
+  --colorNavbar: #{$color__card};
+  --colorText: #{$color__white};
+  --colorSubText: #{rgba($color__white, 0.6)};
+  --colorBorder: #{rgba($color__white, 0.3)};
+  --colorCard: #{$color__card};
+  --colorBackgroundSkills: #333b46;
+  --colorIcon: #{$color__light};
+  --colorsOpacity: 0.9;
+  --colorFooter: #{$color__card};
+  --colorShadow: 0, 0, 0;
+}

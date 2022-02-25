@@ -15,7 +15,57 @@ fetch('./data.json')
   })
   .then(() => calcPreviewAutoscroll());
 
-let projects, courses;
+let projects,
+  courses,
+  theme = 'theme--dark';
+
+// Theme
+
+const body = document.querySelector('body');
+const darkTheme = document.querySelector('#themeDark');
+const lightTheme = document.querySelector('#themeLight');
+const preferedTheme = localStorage.getItem('preferedTheme');
+setTheme();
+
+function setTheme() {
+  if (preferedTheme) {
+    theme = preferedTheme;
+  } else if (window.matchMedia('(prefers-color-scheme:light)').matches) {
+    theme = 'theme--light';
+  }
+
+  if (theme === 'theme--light') {
+    darkTheme.parentElement.style.display = 'block';
+    lightTheme.parentElement.style.display = 'none';
+  } else if (theme === 'theme--dark') {
+    lightTheme.parentElement.style.display = 'block';
+  }
+
+  body.className = theme;
+}
+
+darkTheme.addEventListener('click', () => colorThemeChange('theme--dark'));
+lightTheme.addEventListener('click', () => colorThemeChange('theme--light'));
+
+function colorThemeChange(newTheme) {
+  theme = newTheme;
+  body.className = theme;
+
+  if (newTheme === 'theme--dark') {
+    darkTheme.parentElement.style.display = 'none';
+    lightTheme.parentElement.style.display = 'flex';
+  } else if (newTheme === 'theme--light') {
+    lightTheme.parentElement.style.display = 'none';
+    darkTheme.parentElement.style.display = 'flex';
+  }
+
+  localStorage.setItem('preferedTheme', theme);
+
+  body.classList.add('color-transition');
+  setTimeout(() => {
+    body.classList.remove('color-transition');
+  }, 800);
+}
 
 scrollNavbar();
 window.addEventListener('resize', () => calcPreviewAutoscroll());
@@ -49,7 +99,6 @@ navigationList.addEventListener('click', (e) => {
 function navbarIntersection(entries) {
   entries.forEach((entry) => {
     linkActive = navigationList.querySelector('li.active');
-
     if (entry.isIntersecting) {
       indicator.classList.add('active');
       if (linkActive) {
@@ -73,9 +122,15 @@ function navbarIntersection(entries) {
 function setIntersection(target) {
   let observer;
   if (target.id === 'training') {
-    observer = new IntersectionObserver(navbarIntersection, { threshold: [0.7, 0.8, 0.9, 1] });
+    observer = new IntersectionObserver(navbarIntersection, {
+      root: parallax,
+      threshold: [0.7, 0.8, 0.9, 1],
+    });
   } else {
-    observer = new IntersectionObserver(navbarIntersection, { threshold: [0.9, 1] });
+    observer = new IntersectionObserver(navbarIntersection, {
+      root: parallax,
+      threshold: [0.9, 1],
+    });
   }
   observer.observe(target);
 }
@@ -167,16 +222,8 @@ function scrollNavbar() {
 
     if (parallaxScroll > navbarHeight * 2) {
       navbar.classList.add('navbar--scroll');
-      navigationLinks.forEach((link) => {
-        link.classList.remove('whiteLink');
-        link.classList.add('blackLink');
-      });
     } else {
       navbar.classList.remove('navbar--scroll');
-      navigationLinks.forEach((link) => {
-        link.classList.remove('blackLink');
-        link.classList.add('whiteLink');
-      });
     }
   });
 }
