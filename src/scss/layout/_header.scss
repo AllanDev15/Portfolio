@@ -9,12 +9,12 @@
   transition: opacity 0.4s ease-in;
 
   &__container {
-    color: utils.$color__white;
     position: relative;
     height: 100%;
   }
 
   &__logo {
+    color: utils.$color__white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -80,10 +80,13 @@
       color: utils.$color__black;
     }
 
-    .navigation__link {
-      color: rgba(utils.$color__dark, 0.6);
-      &:hover {
-        color: utils.$color__black;
+    & .navigation {
+      li:hover .navigation__link,
+      li.active .navigation__link {
+        color: var(--colorText);
+      }
+      &__link {
+        color: rgba(utils.$color__dark, 0.6);
       }
     }
 
@@ -94,9 +97,6 @@
       }
       .navigation__link {
         color: rgba(utils.$color__white, 0.6);
-        &:hover {
-          color: utils.$color__white;
-        }
       }
     }
   }
@@ -126,9 +126,8 @@
 
       li {
         position: relative;
-        &.active .navigation__link,
         &:hover .navigation__link {
-          color: var(--colorText);
+          color: utils.$color__white;
         }
       }
 
