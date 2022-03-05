@@ -80,6 +80,7 @@ const projectsLink = document.querySelector('.navigation__list li:nth-child(3)')
 const trainingLink = document.querySelector('.navigation__list li:nth-child(4)');
 const indicator = document.querySelector('.navigation__indicator');
 let windowWidth,
+  thresholdProjects,
   thresholdTraining,
   thresholds,
   linkActive,
@@ -87,8 +88,9 @@ let windowWidth,
 
 windowWidth = window.innerWidth;
 if (windowWidth < 768) {
-  thresholdTraining = [0.5, 0.6, 0.7, 0.8, 0.9, 1];
-  thresholds = [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
+  thresholdProjects = [0.2, 1];
+  thresholdTraining = [0.2, 1];
+  thresholds = [0.4, 1];
   scrollBlock = 'start';
 }
 
@@ -133,9 +135,13 @@ function navbarIntersection(entries) {
 
 function setIntersection(target) {
   let observer;
-  if (target.id === 'training') {
+  if (target.id === 'projects') {
     observer = new IntersectionObserver(navbarIntersection, {
-      threshold: thresholdTraining ? thresholdTraining : [0.7, 0.8, 0.9, 1],
+      threshold: thresholdProjects ? thresholdProjects : [0.8, 1],
+    });
+  } else if (target.id === 'training') {
+    observer = new IntersectionObserver(navbarIntersection, {
+      threshold: thresholdTraining ? thresholdTraining : [0.7, 1],
     });
   } else {
     observer = new IntersectionObserver(navbarIntersection, {

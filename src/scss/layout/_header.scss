@@ -68,7 +68,7 @@
   }
 
   .navigation__link {
-    color: rgba(utils.$color__white, 0.6);
+    color: var(--colorSubText);
   }
 
   &.navbar--scroll {
@@ -113,6 +113,10 @@
 
     &__title {
       display: block;
+    }
+
+    .navigation__link {
+      color: rgba(utils.$color__white, 0.6);
     }
   }
 

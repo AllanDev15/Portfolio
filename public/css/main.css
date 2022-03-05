@@ -645,7 +645,7 @@ section {
   display: none;
 }
 .navbar .navigation__link {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--colorSubText);
 }
 .navbar.navbar--scroll {
   background-color: var(--colorNavbar);
@@ -684,6 +684,9 @@ section {
   }
   .navbar__title {
     display: block;
+  }
+  .navbar .navigation__link {
+    color: rgba(255, 255, 255, 0.6);
   }
 }
 .navbar .navigation {
